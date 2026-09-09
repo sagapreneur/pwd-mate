@@ -88,7 +88,7 @@ export const TopBar: React.FC<TopBarProps> = ({ currentUser, onLogout }) => {
 
   return (
     <>
-      <header className="h-16 bg-[#0B1F3A] border-b border-[#14335C] text-white flex items-center justify-between px-6 shrink-0 shadow-sm no-print">
+      <header className="sticky top-0 z-20 h-16 bg-[#0B1F3A] border-b border-[#14335C] text-white flex items-center justify-between px-6 shrink-0 shadow-sm no-print">
         {/* Active Work Title with Click-to-Edit */}
         <div className="flex items-center space-x-3 overflow-hidden max-w-xl">
           <span

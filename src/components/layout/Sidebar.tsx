@@ -47,9 +47,9 @@ export const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-64 bg-[#071426] text-white flex flex-col shrink-0 h-screen border-r border-[#14335C] select-none no-print">
+    <aside className="sticky top-0 left-0 w-64 bg-[#071426] text-white flex flex-col shrink-0 h-screen max-h-screen border-r border-[#14335C] select-none no-print z-30 self-start">
       {/* Brand Header */}
-      <div className="p-4 border-b border-[#14335C] bg-[#0B1F3A] flex items-center space-x-3">
+      <div className="p-4 border-b border-[#14335C] bg-[#0B1F3A] flex items-center space-x-3 shrink-0">
         <div className="w-10 h-10 rounded bg-[#F4762A] flex items-center justify-center text-white shadow-md font-bold text-lg">
           <Building2 className="w-6 h-6" />
         </div>
@@ -157,7 +157,7 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Division Footer Badge */}
-      <div className="p-3 bg-[#0B1F3A] border-t border-[#14335C] text-[11px]">
+      <div className="p-3 bg-[#0B1F3A] border-t border-[#14335C] text-[11px] shrink-0">
         <div className="flex items-center justify-between text-slate-300 mb-1">
           <span className="font-semibold text-white truncate">{facesheet.division}</span>
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
