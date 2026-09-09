@@ -134,19 +134,53 @@
   border: 3px double #000000 !important;
 }
 
-/* Official Print Stylesheets */
+/* Official Maharashtra PWD Monochromatic Print Stylesheets */
 @media print {
-  html, body {
-    background-color: #FFFFFF !important;
-    color: #000000 !important;
-    font-size: 10.5pt !important;
+  /* 1. Global Reset - Remove all clipping and height restrictions */
+  *, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html, body, #root {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 10pt !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
-  
-  .no-print {
+
+  /* 2. Break out of all viewport-clamping containers (h-screen, overflow-hidden) */
+  body * {
+    overflow: visible !important;
+  }
+
+  .h-screen, .min-h-screen, .h-full, .max-h-screen {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  .overflow-hidden, .overflow-y-auto, .overflow-x-auto, .overflow-auto {
+    overflow: visible !important;
+  }
+
+  .flex, .flex-col, .flex-1 {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  /* 3. Hide non-printable screen navigation and toolbars */
+  .no-print, header, aside, nav {
     display: none !important;
   }
 
@@ -154,11 +188,84 @@
     display: block !important;
   }
 
+  /* 4. Page Canvas & Layout */
   @page {
     size: A4 portrait;
-    margin: 10mm 8mm 10mm 8mm;
+    margin: 12mm 10mm 12mm 10mm;
   }
 
+  main, .max-w-7xl, .dossier-print-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    background: #FFFFFF !important;
+  }
+
+  /* 5. Printable Page Sheets (A4 Multi-page separation) */
+  .print-page {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 0 16mm 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 6. High-contrast Official Tables in Print */
+  table, .mono-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    margin-bottom: 12px !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tfoot {
+    display: table-footer-group !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  th, td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 3px 5px !important;
+    font-size: 9.5pt !important;
+  }
+
+  th {
+    background-color: #F8F9FA !important;
+    font-weight: bold !important;
+    text-align: center !important;
+  }
+
+  /* 7. Page break utilities */
   .page-break-before {
     page-break-before: always !important;
     break-before: page !important;
@@ -169,40 +276,9 @@
     break-inside: avoid !important;
   }
 
-  .print-page {
-    page-break-after: always !important;
-    break-after: page !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-    margin: 0 0 10mm 0 !important;
-    padding: 0 !important;
+  img {
     max-width: 100% !important;
-    min-height: auto !important;
-    width: 100% !important;
-    background-color: #FFFFFF !important;
-    color: #000000 !important;
-  }
-
-  .dossier-print-container {
-    gap: 0 !important;
-    background-color: #FFFFFF !important;
-    padding: 0 !important;
-  }
-
-  table {
-    border-collapse: collapse !important;
-    width: 100% !important;
-  }
-
-  th, td {
-    border: 1px solid #000000 !important;
-    color: #000000 !important;
-  }
-
-  th {
-    background-color: #FFFFFF !important;
-    color: #000000 !important;
-    font-weight: bold !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 }

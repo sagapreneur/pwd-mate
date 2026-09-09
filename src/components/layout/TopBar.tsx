@@ -69,6 +69,9 @@ export const TopBar: React.FC<TopBarProps> = ({ currentUser, onLogout }) => {
       window.print();
     } else {
       setActiveTab('dossier');
+      setTimeout(() => {
+        window.print();
+      }, 350);
     }
   };
 
