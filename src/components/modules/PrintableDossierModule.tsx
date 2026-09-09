@@ -1694,25 +1694,25 @@ export const PrintableDossierModule: React.FC = () => {
               <table className="mono-table mono-table-tight">
                 <thead>
                   <tr>
-                    <th className="w-16">Item Code</th>
-                    <th>Specification</th>
-                    <th className="w-16 text-right">Item Qty</th>
-                    <th className="w-32">Material</th>
-                    <th className="w-16 text-right">CF</th>
-                    <th className="w-20 text-right">Derived Qty</th>
-                    <th className="w-14 text-center">Unit</th>
+                    <th className="w-14 text-center">Item Code</th>
+                    <th className="text-left min-w-[180px]">Specification</th>
+                    <th className="w-16 text-right whitespace-nowrap">Item Qty</th>
+                    <th className="w-32 text-left">Material</th>
+                    <th className="w-14 text-right whitespace-nowrap">CF</th>
+                    <th className="w-20 text-right whitespace-nowrap">Derived Qty</th>
+                    <th className="w-12 text-center whitespace-nowrap">Unit</th>
                   </tr>
                 </thead>
                 <tbody>
                   {materialRows.map((r, idx) => (
                     <tr key={idx}>
-                      <td className="text-center font-mono font-bold">{r.itemCode}</td>
-                      <td className="text-[10px] truncate max-w-xs">{r.description}</td>
-                      <td className="text-right font-mono">{r.itemQty.toFixed(2)}</td>
-                      <td className="font-semibold text-[10px]">{r.materialName}</td>
-                      <td className="text-right font-mono">{r.factor.toFixed(3)}</td>
-                      <td className="text-right font-mono font-bold">{r.derivedQty.toFixed(2)}</td>
-                      <td className="text-center text-[10px]">{r.materialUnit}</td>
+                      <td className="text-center font-mono font-bold align-top">{r.itemCode}</td>
+                      <td className="text-[10px] leading-tight whitespace-normal break-words align-top">{r.description}</td>
+                      <td className="text-right font-mono whitespace-nowrap align-top">{r.itemQty.toFixed(2)}</td>
+                      <td className="font-semibold text-[10px] whitespace-normal break-words align-top">{r.materialName}</td>
+                      <td className="text-right font-mono whitespace-nowrap align-top">{r.factor.toFixed(3)}</td>
+                      <td className="text-right font-mono font-bold whitespace-nowrap align-top">{r.derivedQty.toFixed(2)}</td>
+                      <td className="text-center text-[10px] whitespace-nowrap align-top">{r.materialUnit}</td>
                     </tr>
                   ))}
                 </tbody>

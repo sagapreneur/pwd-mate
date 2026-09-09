@@ -77,7 +77,7 @@ export const ConsumptionModule: React.FC = () => {
                   <td className="font-mono font-bold text-xs text-[#0B1F3A]">
                     {row.itemCode}
                   </td>
-                  <td className="text-xs text-slate-700 truncate max-w-md">
+                  <td className="text-xs text-slate-700 leading-snug whitespace-normal break-words py-2.5">
                     {row.description}
                   </td>
                   <td className="text-right font-mono text-xs text-slate-700 tabular-nums-force">
