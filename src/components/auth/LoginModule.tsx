@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lock, Mail, ShieldCheck, Eye, EyeOff, Building2, UserCheck, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Lock, Mail, ShieldCheck, Eye, EyeOff, AlertCircle } from 'lucide-react';
 
 interface LoginModuleProps {
   onLoginSuccess: (user: { name: string; role: string; division: string; email: string }) => void;
@@ -8,8 +8,6 @@ interface LoginModuleProps {
 export const LoginModule: React.FC<LoginModuleProps> = ({ onLoginSuccess }) => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
-  const [division, setDivision] = useState('Public Works Division, Wardha');
-  const [designation, setDesignation] = useState('Sub-Divisional Engineer');
   const [showPassword, setShowPassword] = useState(false);
   const [captchaInput, setCaptchaInput] = useState('');
   const [captchaCode, setCaptchaCode] = useState('7H8K');
@@ -45,7 +43,7 @@ export const LoginModule: React.FC<LoginModuleProps> = ({ onLoginSuccess }) => {
 
     setTimeout(() => {
       // Valid credential sets
-      const validUsers = ['admin', 'pwd.engineer@mahapwd.gov.in', 'pwd', 'engineer', 'sde.wardha@mahapwd.gov.in'];
+      const validUsers = ['admin', 'pwd.engineer@mahapwd.gov.in', 'pwd', 'engineer', 'contractor', 'contractor@mahapwd.in'];
       const validPasswords = ['PWD@Maharashtra2026', 'admin123', 'maha123', 'pwd123'];
 
       const isUserValid = validUsers.includes(cleanUser);
@@ -54,22 +52,22 @@ export const LoginModule: React.FC<LoginModuleProps> = ({ onLoginSuccess }) => {
       if (isUserValid && isPassValid) {
         const userName =
           cleanUser === 'admin'
-            ? 'Administrator (P.W.D.)'
-            : cleanUser.includes('engineer') || cleanUser.includes('sde')
-            ? 'Er. S. R. Patil'
-            : 'Officer In-Charge';
+            ? 'Administrator'
+            : cleanUser.includes('contractor')
+            ? 'Contractor User'
+            : 'Authorized User';
 
         const userObj = {
           name: userName,
-          role: designation,
-          division: division,
-          email: userId.includes('@') ? userId : `${userId}@mahapwd.gov.in`,
+          role: 'Contractor',
+          division: 'All Maharashtra Divisions',
+          email: userId.includes('@') ? userId : `${userId}@contractor.mahapwd.in`,
         };
 
         localStorage.setItem('maha_pwd_auth_session', JSON.stringify(userObj));
         onLoginSuccess(userObj);
       } else {
-        setErrorMsg('Invalid Officer ID or Password. Please verify your department credentials or contact the Division Administrator.');
+        setErrorMsg('Invalid User ID or Password. Please verify your credentials and try again.');
         setIsLoading(false);
         refreshCaptcha();
       }
@@ -182,46 +180,7 @@ export const LoginModule: React.FC<LoginModuleProps> = ({ onLoginSuccess }) => {
               </div>
             </div>
 
-            {/* Division Selector */}
-            <div>
-              <label className="block text-xs font-bold text-[#0B1F3A] mb-1 flex items-center space-x-1">
-                <Building2 className="w-3.5 h-3.5 text-[#F4762A]" />
-                <span>Division / Circle *</span>
-              </label>
-              <select
-                value={division}
-                onChange={(e) => setDivision(e.target.value)}
-                className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-slate-50 focus:bg-white focus:border-[#F4762A] outline-none font-semibold text-slate-800"
-              >
-                <option value="Public Works Division, Wardha">Public Works Division, Wardha (Circle: Chandrapur)</option>
-                <option value="Public Works Division, Nagpur">Public Works Division, Nagpur (Circle: Nagpur)</option>
-                <option value="Public Works Division, Chandrapur">Public Works Division, Chandrapur</option>
-                <option value="Public Works Division, Pune">Public Works Division, Pune</option>
-                <option value="Public Works Division, Amravati">Public Works Division, Amravati</option>
-                <option value="Public Works Division, Nashik">Public Works Division, Nashik</option>
-                <option value="Public Works Division, Chhatrapati Sambhajinagar">Public Works Division, Chhatrapati Sambhajinagar</option>
-                <option value="South Mumbai P.W. Division">South Mumbai P.W. Division</option>
-              </select>
-            </div>
 
-            {/* Designation Selector */}
-            <div>
-              <label className="block text-xs font-bold text-[#0B1F3A] mb-1 flex items-center space-x-1">
-                <UserCheck className="w-3.5 h-3.5 text-[#F4762A]" />
-                <span>Officer Role / Designation *</span>
-              </label>
-              <select
-                value={designation}
-                onChange={(e) => setDesignation(e.target.value)}
-                className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-slate-50 focus:bg-white focus:border-[#F4762A] outline-none font-semibold text-slate-800"
-              >
-                <option value="Sub-Divisional Engineer">Sub-Divisional Engineer (उपविभागीय अभियंता)</option>
-                <option value="Executive Engineer">Executive Engineer (कार्यकारी अभियंता)</option>
-                <option value="Junior / Sectional Engineer">Junior / Sectional Engineer (कनिष्ठ / शाखा अभियंता)</option>
-                <option value="Superintending Engineer">Superintending Engineer (अधीक्षक अभियंता)</option>
-                <option value="Chief Engineer">Chief Engineer (मुख्य अभियंता)</option>
-              </select>
-            </div>
 
             {/* Security Captcha */}
             <div>

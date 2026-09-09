@@ -207,7 +207,7 @@ export const TopBar: React.FC<TopBarProps> = ({ currentUser, onLogout }) => {
                   <span>{currentUser.name}</span>
                 </div>
                 <div className="text-[9px] text-amber-300 font-medium">
-                  {currentUser.role}
+                  Contractor Portal
                 </div>
               </div>
               <button

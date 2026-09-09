@@ -386,16 +386,17 @@ export const PrintableDossierModule: React.FC = () => {
           <div className="print-page bg-white text-black p-8 sm:p-12 mb-8 max-w-[210mm] mx-auto border-2 border-black shadow-2xl mono-doc print:border-none print:shadow-none print:p-0 print:m-0 flex flex-col justify-between min-h-[297mm]">
             <div>
               {/* Official State Emblem of India / Maharashtra Government */}
-              <div className="flex flex-col items-center justify-center mb-6 text-center">
+              <div className="official-emblem-container flex flex-col items-center justify-center mb-6 text-center print:block print:w-full print:text-center print:mb-6">
                 <img
                   src="/emblem.png"
                   alt="State Emblem of India"
-                  className="h-28 w-auto object-contain mb-3 print:h-28 filter contrast-125"
+                  className="official-emblem-img h-28 w-auto object-contain mb-3 print:h-28 filter contrast-125 mx-auto"
+                  style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}
                 />
-                <p className="text-sm font-bold tracking-widest uppercase font-devanagari">
+                <p className="text-sm font-bold tracking-widest uppercase font-devanagari text-center print:text-center">
                   महाराष्ट्र शासन • सार्वजनिक बांधकाम विभाग
                 </p>
-                <p className="text-xs font-bold tracking-widest uppercase text-black/80 mt-0.5">
+                <p className="text-xs font-bold tracking-widest uppercase text-black/80 mt-0.5 text-center print:text-center">
                   GOVERNMENT OF MAHARASHTRA • PUBLIC WORKS DEPARTMENT
                 </p>
               </div>
