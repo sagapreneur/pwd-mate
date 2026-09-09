@@ -116,7 +116,7 @@ export function App() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden print:h-auto print:min-h-0 print:overflow-visible print:block print:w-full">
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden ml-64 print:ml-0 print:h-auto print:min-h-0 print:overflow-visible print:block print:w-full">
         {/* Top Pinned Bar */}
         <TopBar currentUser={currentUser} onLogout={handleLogout} />
 
