@@ -2,24 +2,40 @@
 
 @layer base {
   :root {
-    --navy-deepest: #071426;
-    --navy-primary: #0B1F3A;
-    --navy-surface: #14335C;
-    --navy-light: #1D4B85;
-    --navy-subtle: #E7ECF5;
+    /* Brand Navy */
+    --navy-brand: #02013F;
+    --navy-deepest: #02013F;
+    --navy-primary: #02013F;
+    --navy-surface: #0a0956;
+    --navy-light: #14136e;
+    --navy-subtle: #e8ebf8;
     
-    --orange-accent: #F4762A;
-    --orange-hover: #D65F14;
-    --orange-subtle: #FDEBDD;
+    /* Brand Green */
+    --green-primary: #81C303;
+    --green-hover: #72ad02;
+    --green-pale: #FBFFEB;
     
-    --surface-canvas: #F7F8FA;
+    /* Legacy alias for smooth compatibility */
+    --orange-accent: #81C303;
+    --orange-hover: #72ad02;
+    --orange-subtle: #FBFFEB;
+    
+    /* Clinical UI Colors */
+    --clinical-blue: #2563EB;
+    --clinical-success: #16A34A;
+    --clinical-warning: #D97706;
+    --clinical-danger: #DC2626;
+    --clinical-info: #0891B2;
+    
+    /* Neutral Palette */
+    --surface-canvas: #F8FAFC;
     --surface-card: #FFFFFF;
-    --border-grid: #D1D5DB;
+    --border-grid: #E5E7EB;
     --border-subtle: #E5E7EB;
     
     --text-primary: #111827;
-    --text-secondary: #4B5563;
-    --text-muted: #9CA3AF;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
   }
 
   body {
@@ -44,14 +60,14 @@
 
 /* Dense table row styling */
 .dense-table th {
-  background-color: #0B1F3A;
+  background-color: #02013F;
   color: #FFFFFF;
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.4rem 0.5rem;
-  border: 1px solid #14335C;
+  border: 1px solid #14136e;
 }
 
 .dense-table td {

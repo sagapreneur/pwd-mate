@@ -27,7 +27,7 @@ export const GeneralAbstractModule: React.FC = () => {
             className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-sm ${
               isLocked
                 ? 'bg-emerald-600 text-white'
-                : 'bg-[#0B1F3A] hover:bg-[#14335C] text-white'
+                : 'bg-[#02013F] hover:bg-[#14136e] text-white'
             }`}
           >
             {isLocked ? (
@@ -47,7 +47,7 @@ export const GeneralAbstractModule: React.FC = () => {
         <div className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">
           GOVERNMENT OF MAHARASHTRA — PUBLIC WORKS DEPARTMENT
         </div>
-        <h2 className="text-xl font-extrabold text-[#0B1F3A] uppercase tracking-wide">
+        <h2 className="text-xl font-extrabold text-[#02013F] uppercase tracking-wide">
           General Abstract (Recapitulation Sheet)
         </h2>
         <p className="text-xs font-semibold text-slate-700 max-w-3xl mx-auto">
@@ -81,7 +81,7 @@ export const GeneralAbstractModule: React.FC = () => {
                     Sum of all measured item quantities multiplied by final sanctioned unit rates
                   </div>
                 </td>
-                <td className="text-center font-mono font-bold text-xs text-[#0B1F3A]">Schedule 'A'</td>
+                <td className="text-center font-mono font-bold text-xs text-[#02013F]">Schedule 'A'</td>
                 <td className="text-center font-mono text-xs text-slate-400">Rs.</td>
                 <td className="text-right font-mono font-bold text-xs text-slate-900 tabular-nums-force">
                   ₹{calculationRollup.scheduleA_costOfWork.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -97,7 +97,7 @@ export const GeneralAbstractModule: React.FC = () => {
                     Levied on extracted river sand (₹150/Cu.M) and coarse metal aggregates (₹80/Cu.M)
                   </div>
                 </td>
-                <td className="text-center font-mono font-bold text-xs text-[#0B1F3A]">Schedule 'B'</td>
+                <td className="text-center font-mono font-bold text-xs text-[#02013F]">Schedule 'B'</td>
                 <td className="text-center font-mono text-xs text-slate-400">Rs.</td>
                 <td className="text-right font-mono font-bold text-xs text-slate-900 tabular-nums-force">
                   ₹{calculationRollup.scheduleB_royalty.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -113,7 +113,7 @@ export const GeneralAbstractModule: React.FC = () => {
                     Field laboratory verification as per PWD Handbook Ch. 33 and MORTH Section 1700
                   </div>
                 </td>
-                <td className="text-center font-mono font-bold text-xs text-[#0B1F3A]">Schedule 'C'</td>
+                <td className="text-center font-mono font-bold text-xs text-[#02013F]">Schedule 'C'</td>
                 <td className="text-center font-mono text-xs text-slate-400">Rs.</td>
                 <td className="text-right font-mono font-bold text-xs text-slate-900 tabular-nums-force">
                   ₹{calculationRollup.scheduleC_testing.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -201,14 +201,14 @@ export const GeneralAbstractModule: React.FC = () => {
               </tr>
 
               {/* Row 10: Sanctioned Budget Total */}
-              <tr className="bg-[#0B1F3A] text-white border-t-2 border-[#F4762A]">
-                <td className="text-center font-mono font-bold text-xs text-[#F4762A]">FINAL</td>
+              <tr className="bg-[#02013F] text-white border-t-2 border-[#81C303]">
+                <td className="text-center font-mono font-bold text-xs text-[#81C303]">FINAL</td>
                 <td className="font-bold text-sm text-white uppercase tracking-wider">
                   Sanctioned Budget (Rounded Off to Nearest Rupee)
                 </td>
                 <td className="text-center font-mono text-xs text-amber-300 font-bold">T/S SANCTION</td>
                 <td className="text-center font-mono text-xs text-slate-300">Rs.</td>
-                <td className="text-right font-mono font-bold text-base text-[#F4762A] tabular-nums-force">
+                <td className="text-right font-mono font-bold text-base text-[#81C303] tabular-nums-force">
                   ₹{calculationRollup.sanctionedTotal.toLocaleString('en-IN')}/-
                 </td>
               </tr>
@@ -217,7 +217,7 @@ export const GeneralAbstractModule: React.FC = () => {
         </div>
 
         {/* Budget Word Banner */}
-        <div className="bg-[#071426] text-white p-4 border-t border-[#14335C] flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div className="bg-[#02013F] text-white p-4 border-t border-[#14136e] flex flex-col md:flex-row md:items-center justify-between gap-2">
           <div className="text-xs text-slate-300 font-medium">
             (Rupees In Words: <strong className="text-amber-300 font-semibold">{calculationRollup.formattedLakhs}</strong>)
           </div>
@@ -241,7 +241,7 @@ export const GeneralAbstractModule: React.FC = () => {
               <span className="text-[10px] text-slate-400 italic">[Signed Digitally]</span>
             </div>
             <div>
-              <div className="text-xs font-bold text-[#0B1F3A]">{seStamp?.name}</div>
+              <div className="text-xs font-bold text-[#02013F]">{seStamp?.name}</div>
               <div className="text-[11px] font-semibold text-slate-600">{seStamp?.designation}</div>
               <div className="text-[10px] text-slate-500">{seStamp?.subDivision}</div>
               <span className="inline-block mt-2 text-[9px] bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded uppercase">
@@ -256,7 +256,7 @@ export const GeneralAbstractModule: React.FC = () => {
               <span className="text-[10px] text-slate-400 italic">[Verified & Endorsed]</span>
             </div>
             <div>
-              <div className="text-xs font-bold text-[#0B1F3A]">{sdeStamp?.name}</div>
+              <div className="text-xs font-bold text-[#02013F]">{sdeStamp?.name}</div>
               <div className="text-[11px] font-semibold text-slate-600">{sdeStamp?.designation}</div>
               <div className="text-[10px] text-slate-500">{sdeStamp?.subDivision}</div>
               <span className="inline-block mt-2 text-[9px] bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded uppercase">
@@ -266,17 +266,17 @@ export const GeneralAbstractModule: React.FC = () => {
           </div>
 
           {/* Executive Engineer Stamp */}
-          <div className="border-2 border-[#0B1F3A] rounded-lg p-4 text-center space-y-2 bg-slate-50">
+          <div className="border-2 border-[#02013F] rounded-lg p-4 text-center space-y-2 bg-slate-50">
             <div className="h-16 flex items-end justify-center border-b border-dashed border-slate-300 pb-2">
               <span className="text-[10px] text-emerald-700 font-bold font-mono">
                 {isLocked ? '✓ TECHNICALLY SANCTIONED' : '[Pending Final Sanction]'}
               </span>
             </div>
             <div>
-              <div className="text-xs font-bold text-[#0B1F3A]">{eeStamp?.name}</div>
+              <div className="text-xs font-bold text-[#02013F]">{eeStamp?.name}</div>
               <div className="text-[11px] font-semibold text-slate-600">{eeStamp?.designation}</div>
               <div className="text-[10px] text-slate-500">{eeStamp?.subDivision}</div>
-              <span className="inline-block mt-2 text-[9px] bg-[#0B1F3A] text-white font-bold px-2.5 py-0.5 rounded uppercase">
+              <span className="inline-block mt-2 text-[9px] bg-[#02013F] text-white font-bold px-2.5 py-0.5 rounded uppercase">
                 Technical Sanction Authority
               </span>
             </div>

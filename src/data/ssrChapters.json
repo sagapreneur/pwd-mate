@@ -1,0 +1,562 @@
+[
+  {
+    "name": "Road Survey and DPR",
+    "count": 78,
+    "chapterNumber": 1
+  },
+  {
+    "name": "Road Sub grade",
+    "count": 35,
+    "chapterNumber": 2
+  },
+  {
+    "name": "Road Sub Base and Base Course",
+    "count": 51,
+    "chapterNumber": 3
+  },
+  {
+    "name": "Road Surfacing Course",
+    "count": 13,
+    "chapterNumber": 4
+  },
+  {
+    "name": "Rigid Pavement",
+    "count": 23,
+    "chapterNumber": 5
+  },
+  {
+    "name": "Road Furniture",
+    "count": 222,
+    "chapterNumber": 6
+  },
+  {
+    "name": "Road Miscellaneous items",
+    "count": 34,
+    "chapterNumber": 7
+  },
+  {
+    "name": "Road Maintenance",
+    "count": 35,
+    "chapterNumber": 8
+  },
+  {
+    "name": "Cross Drainage Works",
+    "count": 28,
+    "chapterNumber": 11
+  },
+  {
+    "name": "Bridge Foundation and Sub Structure",
+    "count": 67,
+    "chapterNumber": 12
+  },
+  {
+    "name": "Bridge : Bored Pile",
+    "count": 51,
+    "chapterNumber": 12
+  },
+  {
+    "name": "Bridge Bearings",
+    "count": 8,
+    "chapterNumber": 13
+  },
+  {
+    "name": "Bridge Super Structure",
+    "count": 72,
+    "chapterNumber": 14
+  },
+  {
+    "name": "Bridge : Bored Pile New Item",
+    "count": 18,
+    "chapterNumber": 15
+  },
+  {
+    "name": "Bridge Maintenance",
+    "count": 23,
+    "chapterNumber": 16
+  },
+  {
+    "name": "Bridge : Well Foundation",
+    "count": 24,
+    "chapterNumber": 17
+  },
+  {
+    "name": "Bridge sub structure and Foundation",
+    "count": 30,
+    "chapterNumber": 17
+  },
+  {
+    "name": "Bored Pile, Well Foundation, sub & Super Structure",
+    "count": 7,
+    "chapterNumber": 17
+  },
+  {
+    "name": "Arch Bridge",
+    "count": 8,
+    "chapterNumber": 18
+  },
+  {
+    "name": "Bridge Maintenance New Item",
+    "count": 4,
+    "chapterNumber": 19
+  },
+  {
+    "name": "Bridge Repair New Item",
+    "count": 46,
+    "chapterNumber": 19
+  },
+  {
+    "name": "Excavation",
+    "count": 35,
+    "chapterNumber": 21
+  },
+  {
+    "name": "Pile Foundation: Building",
+    "count": 61,
+    "chapterNumber": 22
+  },
+  {
+    "name": "Structural Steel Work",
+    "count": 11,
+    "chapterNumber": 23
+  },
+  {
+    "name": "Plain Cement Concrete",
+    "count": 9,
+    "chapterNumber": 24
+  },
+  {
+    "name": "Reinforced Cement Concrete",
+    "count": 53,
+    "chapterNumber": 25
+  },
+  {
+    "name": "Brick Masonry",
+    "count": 15,
+    "chapterNumber": 27
+  },
+  {
+    "name": "Stone Masonry",
+    "count": 13,
+    "chapterNumber": 28
+  },
+  {
+    "name": "Concrete Block Masonry",
+    "count": 9,
+    "chapterNumber": 29
+  },
+  {
+    "name": "Expansion Joint",
+    "count": 11,
+    "chapterNumber": 30
+  },
+  {
+    "name": "Water Proofing",
+    "count": 18,
+    "chapterNumber": 31
+  },
+  {
+    "name": "Plastering and Pointing",
+    "count": 42,
+    "chapterNumber": 32
+  },
+  {
+    "name": "Paving Flooring and dado",
+    "count": 72,
+    "chapterNumber": 33
+  },
+  {
+    "name": "Wood Finish",
+    "count": 11,
+    "chapterNumber": 34
+  },
+  {
+    "name": "Oil Painting",
+    "count": 29,
+    "chapterNumber": 35
+  },
+  {
+    "name": "Colouring",
+    "count": 25,
+    "chapterNumber": 36
+  },
+  {
+    "name": "Wood Work",
+    "count": 26,
+    "chapterNumber": 37
+  },
+  {
+    "name": "Roofing and Ceiling",
+    "count": 52,
+    "chapterNumber": 38
+  },
+  {
+    "name": "Roofing and Ceiling ( New Item)",
+    "count": 1,
+    "chapterNumber": 38
+  },
+  {
+    "name": "Doors and Windows",
+    "count": 121,
+    "chapterNumber": 39
+  },
+  {
+    "name": "Iron Work",
+    "count": 12,
+    "chapterNumber": 40
+  },
+  {
+    "name": "Water Supply and Sanitary Fitting",
+    "count": 214,
+    "chapterNumber": 41
+  },
+  {
+    "name": "Building Miscellaneous Item",
+    "count": 23,
+    "chapterNumber": 44
+  },
+  {
+    "name": "Building Maintenance",
+    "count": 57,
+    "chapterNumber": 46
+  },
+  {
+    "name": "Structural Strengthening",
+    "count": 16,
+    "chapterNumber": 47
+  },
+  {
+    "name": "Masonry Bridge Repair",
+    "count": 1,
+    "chapterNumber": 47
+  },
+  {
+    "name": "Bitumen and concrete road Pot Hole Reparing",
+    "count": 2,
+    "chapterNumber": 47
+  },
+  {
+    "name": "Masonary",
+    "count": 3,
+    "chapterNumber": 48
+  },
+  {
+    "name": "Flooring",
+    "count": 7,
+    "chapterNumber": 48
+  },
+  {
+    "name": "Roofing",
+    "count": 2,
+    "chapterNumber": 48
+  },
+  {
+    "name": "Doors & Windows",
+    "count": 5,
+    "chapterNumber": 48
+  },
+  {
+    "name": "Plumbing",
+    "count": 21,
+    "chapterNumber": 48
+  },
+  {
+    "name": "Rain water harvesting",
+    "count": 9,
+    "chapterNumber": 48
+  },
+  {
+    "name": "Others",
+    "count": 7,
+    "chapterNumber": 48
+  },
+  {
+    "name": "Coastal",
+    "count": 51,
+    "chapterNumber": 49
+  },
+  {
+    "name": "Waterproofing Treatment",
+    "count": 5,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Protective coating and DPR",
+    "count": 1,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Corrosion Inhibiting Admixture",
+    "count": 1,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Waterproofing admixture",
+    "count": 1,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Bonding agent",
+    "count": 1,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Water proofing",
+    "count": 1,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Door and Windows",
+    "count": 16,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Paving , Florring and dado",
+    "count": 8,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Block masonary",
+    "count": 5,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Plastering and pointing",
+    "count": 2,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Waret supply and sanitary",
+    "count": 2,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Geosynthetic",
+    "count": 43,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Road safty work",
+    "count": 6,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Road work",
+    "count": 16,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Miscellaneous",
+    "count": 2,
+    "chapterNumber": 50
+  },
+  {
+    "name": "water supply and sanitary",
+    "count": 23,
+    "chapterNumber": 50
+  },
+  {
+    "name": "Accoustic",
+    "count": 20,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Furniture",
+    "count": 41,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Doors and windows",
+    "count": 2,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Plastering",
+    "count": 4,
+    "chapterNumber": 51
+  },
+  {
+    "name": "PWD persons",
+    "count": 28,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Doors",
+    "count": 1,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Brick Masonary",
+    "count": 5,
+    "chapterNumber": 51
+  },
+  {
+    "name": "water proofing",
+    "count": 3,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Rigid Pavement (New item)",
+    "count": 1,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Road Sub Grade",
+    "count": 1,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Road Maintainance",
+    "count": 7,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Road Safety",
+    "count": 1,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Bridge cum Bhandara",
+    "count": 13,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Cubical Toilet",
+    "count": 7,
+    "chapterNumber": 51
+  },
+  {
+    "name": "a) Door Frame: Supplying & Fixing frames for Fire resistant door shutters 1st class Malaysian Hardwood Frame densified (810 Kilogram/cum) and pressure treated with fire retardant chemicals in vacuum impregnation vessel under 160 psi pressure as per IS:401and kiln seasoned to moisture below 15% as per IS:1141 of section 120 X 70 mm spray quoted with 2 coats of intumescent paint of minimum 200 micron, with single row of Brush- Type ASTROFLAME intumescent strip of size 10mm x 4mm affixed in the slit of the Frame for fire and smoke sealing, etc. complete.",
+    "count": 2,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Road works",
+    "count": 7,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Building Roofing",
+    "count": 4,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Building",
+    "count": 8,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Road",
+    "count": 2,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Surveying",
+    "count": 3,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Ceiling and roofing",
+    "count": 4,
+    "chapterNumber": 51
+  },
+  {
+    "name": "Road furniture",
+    "count": 1,
+    "chapterNumber": 51
+  },
+  {
+    "name": "bambusa bamboos item",
+    "count": 7,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Waterproofing",
+    "count": 17,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Bridge repair",
+    "count": 13,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Road Surevy",
+    "count": 2,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Drone survey",
+    "count": 2,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Road Furniture new item",
+    "count": 2,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Partition",
+    "count": 3,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Door",
+    "count": 1,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Lamination",
+    "count": 2,
+    "chapterNumber": 52
+  },
+  {
+    "name": "Rebar",
+    "count": 31,
+    "chapterNumber": 53
+  },
+  {
+    "name": "Ceiling and roofing ( New Item )",
+    "count": 15,
+    "chapterNumber": 53
+  },
+  {
+    "name": "Expansion Joint ( New Item )",
+    "count": 4,
+    "chapterNumber": 53
+  },
+  {
+    "name": "Green Building ( New Item )",
+    "count": 1,
+    "chapterNumber": 53
+  },
+  {
+    "name": "Precast RCC Panels",
+    "count": 4,
+    "chapterNumber": 53
+  },
+  {
+    "name": "New Item",
+    "count": 31,
+    "chapterNumber": 54
+  },
+  {
+    "name": "DSD CSR FOR BOREWELL",
+    "count": 5,
+    "chapterNumber": 54
+  },
+  {
+    "name": "PARKS & GARDEN",
+    "count": 5,
+    "chapterNumber": 54
+  },
+  {
+    "name": "KITCHEN NON SSR ITEM",
+    "count": 17,
+    "chapterNumber": 0
+  },
+  {
+    "name": "FUNITUER",
+    "count": 1,
+    "chapterNumber": 0
+  }
+]

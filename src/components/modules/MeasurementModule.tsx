@@ -30,14 +30,14 @@ export const MeasurementModule: React.FC = () => {
           <Layers className="w-6 h-6" />
         </div>
         <div>
-          <h3 className="text-base font-bold text-[#0B1F3A]">No Estimate Items Added Yet</h3>
+          <h3 className="text-base font-bold text-[#02013F]">No Estimate Items Added Yet</h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto mt-1">
             Browse the SSR 2022-23 catalog to select schedule items (Excavation, Concrete, Steel, Masonry) and start taking off dimensional measurements.
           </p>
         </div>
         <button
           onClick={() => setActiveTab('catalog')}
-          className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-lg bg-[#F4762A] hover:bg-[#D65F14] text-white text-xs font-bold shadow transition-all"
+          className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-lg bg-[#81C303] hover:bg-[#72ad02] text-white text-xs font-bold shadow transition-all"
         >
           <span>Open SSR Catalog</span>
           <ArrowRight className="w-3.5 h-3.5" />
@@ -51,10 +51,10 @@ export const MeasurementModule: React.FC = () => {
       {/* Header Bar */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Detailed Dimensional Take-Offs
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Measurement Sheet Ledger</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Measurement Sheet Ledger</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Log geometric quantities with floor-wise escalations and structural deduction opening voids ($N = -1$).
           </p>
@@ -62,9 +62,9 @@ export const MeasurementModule: React.FC = () => {
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setActiveTab('catalog')}
-            className="flex items-center space-x-1 px-3 py-1.5 rounded bg-[#0B1F3A] hover:bg-[#14335C] text-white text-xs font-semibold"
+            className="flex items-center space-x-1 px-3 py-1.5 rounded bg-[#02013F] hover:bg-[#14136e] text-white text-xs font-semibold"
           >
-            <Plus className="w-3.5 h-3.5 text-[#F4762A]" />
+            <Plus className="w-3.5 h-3.5 text-[#81C303]" />
             <span>Add More Items</span>
           </button>
         </div>
@@ -93,9 +93,9 @@ export const MeasurementModule: React.FC = () => {
               className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden"
             >
               {/* Item Banner */}
-              <div className="bg-[#0B1F3A] text-white p-3.5 flex items-center justify-between border-b border-[#14335C]">
+              <div className="bg-[#02013F] text-white p-3.5 flex items-center justify-between border-b border-[#14136e]">
                 <div className="flex items-center space-x-3 max-w-3xl">
-                  <span className="bg-[#F4762A] text-white font-mono font-bold text-xs px-2 py-0.5 rounded shadow-sm shrink-0">
+                  <span className="bg-[#81C303] text-white font-mono font-bold text-xs px-2 py-0.5 rounded shadow-sm shrink-0">
                     Item {item.itemCode}
                   </span>
                   <div className="truncate">
@@ -178,7 +178,7 @@ export const MeasurementModule: React.FC = () => {
                                 updateMeasurementRow(item.id, row.id, { label: e.target.value })
                               }
                               placeholder="e.g. Main Column Footing, Porch, Deduct Door Opening..."
-                              className="w-full text-xs p-1 rounded border border-slate-200 focus:border-[#0B1F3A] outline-none"
+                              className="w-full text-xs p-1 rounded border border-slate-200 focus:border-[#02013F] outline-none"
                             />
                           </td>
 
@@ -194,7 +194,7 @@ export const MeasurementModule: React.FC = () => {
                               }
                               className={`text-[10px] font-bold px-2 py-0.5 rounded transition-all ${
                                 isDeduct
-                                  ? 'bg-[#FDEBDD] text-[#D65F14] border border-[#F4762A]'
+                                  ? 'bg-[#FBFFEB] text-[#72ad02] border border-[#81C303]'
                                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                               }`}
                             >
@@ -265,7 +265,7 @@ export const MeasurementModule: React.FC = () => {
                           {/* Computed Qty */}
                           <td
                             className={`text-right font-mono font-bold text-xs tabular-nums-force pr-2 ${
-                              isDeduct ? 'text-[#D65F14]' : 'text-[#0B1F3A]'
+                              isDeduct ? 'text-[#72ad02]' : 'text-[#02013F]'
                             }`}
                           >
                             {row.computedQty.toFixed(3)}
@@ -299,20 +299,20 @@ export const MeasurementModule: React.FC = () => {
               <div className="bg-slate-50 p-3 border-t border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
                 <button
                   onClick={() => addMeasurementRow(item.id)}
-                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#0B1F3A] hover:bg-[#14335C] text-white text-xs font-semibold shadow-sm w-fit"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#02013F] hover:bg-[#14136e] text-white text-xs font-semibold shadow-sm w-fit"
                 >
-                  <Plus className="w-3.5 h-3.5 text-[#F4762A]" />
-                  <span>+ Add Dimension Row</span>
+                  <Plus className="w-3.5 h-3.5 text-[#81C303]" />
+                  <span>Add Dimension Row</span>
                 </button>
 
                 <div className="flex items-center space-x-4 font-mono font-semibold text-slate-600">
                   <span>Gross: <strong className="text-slate-900">{grossAddition.toFixed(3)}</strong></span>
                   {deductionTotal > 0 && (
-                    <span className="text-[#D65F14]">
+                    <span className="text-[#72ad02]">
                       Deductions: <strong>-{deductionTotal.toFixed(3)}</strong>
                     </span>
                   )}
-                  <span className="bg-[#FDEBDD] text-[#D65F14] px-2.5 py-1 rounded border border-[#F4762A]">
+                  <span className="bg-[#FBFFEB] text-[#72ad02] px-2.5 py-1 rounded border border-[#81C303]">
                     Net Total: <strong>{netQuantity} {item.unit}</strong>
                   </span>
                 </div>

@@ -3,6 +3,7 @@ import { useEstimatorStore } from './store/useEstimatorStore';
 import { Sidebar } from './components/layout/Sidebar';
 import { TopBar } from './components/layout/TopBar';
 import { LoginModule } from './components/auth/LoginModule';
+import { LandingPage } from './components/landing/LandingPage';
 
 // Module Components
 import { FacesheetModule } from './components/modules/FacesheetModule';
@@ -21,6 +22,7 @@ import { MarathiDocsModule } from './components/modules/MarathiDocsModule';
 import { AdminCMSModule } from './components/modules/AdminCMSModule';
 import { PrintableDossierModule } from './components/modules/PrintableDossierModule';
 import { MyEstimatesModule } from './components/modules/MyEstimatesModule';
+import { TemplatesModule } from './components/modules/TemplatesModule';
 
 interface UserSession {
   name: string;
@@ -30,7 +32,14 @@ interface UserSession {
 }
 
 export function App() {
-  const { activeTab, recalculateAll, items, loadGoldenMasterDemo, savedEstimates, saveCurrentEstimate, updateFacesheet } = useEstimatorStore();
+  const {
+    activeTab,
+    recalculateAll,
+    items,
+    loadGoldenMasterDemo,
+    saveCurrentEstimate,
+    updateFacesheet,
+  } = useEstimatorStore();
 
   const [currentUser, setCurrentUser] = useState<UserSession | null>(() => {
     const saved = localStorage.getItem('maha_pwd_auth_session');
@@ -44,16 +53,58 @@ export function App() {
     return null;
   });
 
+  const [viewMode, setViewMode] = useState<'landing' | 'login' | 'app'>(() => {
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+    if (hash === '#login') return 'login';
+    if (hash === '#landing') return 'landing';
+    const saved = typeof window !== 'undefined' ? localStorage.getItem('maha_pwd_auth_session') : null;
+    if (saved && hash === '#app') return 'app';
+    if (!saved) return 'landing'; // Unauthenticated visitors land on marketing page
+    return 'app';
+  });
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === '#login') setViewMode('login');
+      else if (hash === '#landing') setViewMode('landing');
+      else if (hash === '#app' && currentUser) setViewMode('app');
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [currentUser]);
+
   const handleLoginSuccess = (user: UserSession) => {
     setCurrentUser(user);
     if (user.division) {
       updateFacesheet({ division: user.division });
     }
+    setViewMode('app');
+    window.location.hash = '#app';
   };
 
   const handleLogout = () => {
     localStorage.removeItem('maha_pwd_auth_session');
     setCurrentUser(null);
+    setViewMode('landing');
+    window.location.hash = '';
+  };
+
+  const handleLaunchApp = () => {
+    if (!currentUser) {
+      const demoUser: UserSession = {
+        name: 'Er. Sagar Kardekar (Demo)',
+        role: 'Contractor',
+        division: 'Public Works Division, Wardha',
+        email: 'demo.engineer@mahapwd.gov.in',
+      };
+      try {
+        localStorage.setItem('maha_pwd_auth_session', JSON.stringify(demoUser));
+      } catch {}
+      setCurrentUser(demoUser);
+    }
+    setViewMode('app');
+    window.location.hash = '#app';
   };
 
   useEffect(() => {
@@ -71,6 +122,8 @@ export function App() {
     switch (activeTab) {
       case 'myEstimates':
         return <MyEstimatesModule />;
+      case 'templates':
+        return <TemplatesModule />;
       case 'facesheet':
         return <FacesheetModule />;
       case 'catalog':
@@ -106,19 +159,51 @@ export function App() {
     }
   };
 
-  if (!currentUser) {
-    return <LoginModule onLoginSuccess={handleLoginSuccess} />;
+  // 1. Landing Page View (accessible to all visitors & evaluation users)
+  if (viewMode === 'landing') {
+    return (
+      <LandingPage
+        onOpenLogin={() => {
+          setViewMode('login');
+          window.location.hash = '#login';
+        }}
+        onLaunchApp={handleLaunchApp}
+        currentUser={currentUser}
+      />
+    );
   }
 
+  // 2. Departmental Login View
+  if (viewMode === 'login' || !currentUser) {
+    return (
+      <LoginModule
+        onLoginSuccess={handleLoginSuccess}
+        onBackToLanding={() => {
+          setViewMode('landing');
+          window.location.hash = '';
+        }}
+      />
+    );
+  }
+
+  // 3. Application Workspace View (Protected)
   return (
-    <div className="flex h-screen bg-[#F7F8FA] overflow-hidden print:h-auto print:min-h-0 print:overflow-visible print:block print:bg-white">
+    <div className="flex h-screen bg-[#F8FAFC] overflow-hidden print:h-auto print:min-h-0 print:overflow-visible print:block print:bg-white">
       {/* Sidebar Navigation */}
       <Sidebar />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden ml-64 print:ml-0 print:h-auto print:min-h-0 print:overflow-visible print:block print:w-full">
         {/* Top Pinned Bar */}
-        <TopBar currentUser={currentUser} onLogout={handleLogout} />
+        <TopBar
+          currentUser={currentUser}
+          onLogout={handleLogout}
+          onUpdateUser={setCurrentUser}
+          onViewLandingPage={() => {
+            setViewMode('landing');
+            window.location.hash = '#landing';
+          }}
+        />
 
         {/* Workspace Canvas */}
         <main className="flex-1 overflow-y-auto p-6 print:p-0 print:m-0 print:overflow-visible print:h-auto print:block print:w-full">

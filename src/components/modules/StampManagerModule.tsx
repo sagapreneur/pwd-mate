@@ -10,16 +10,16 @@ export const StampManagerModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Signatures, Designations & Authorizations
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Digital Stamp & Signature Manager</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Digital Stamp & Signature Manager</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Configure official engineering designations, signatory authority names, and per-schedule visibility toggles.
           </p>
         </div>
-        <div className="bg-[#0B1F3A] text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
-          <Stamp className="w-4 h-4 text-[#F4762A]" />
+        <div className="bg-[#02013F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
+          <Stamp className="w-4 h-4 text-[#81C303]" />
           <span>Departmental Stamp Authority</span>
         </div>
       </div>
@@ -33,7 +33,7 @@ export const StampManagerModule: React.FC = () => {
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                <span className="bg-[#0B1F3A] text-white font-mono font-bold text-xs px-2 py-0.5 rounded">
+                <span className="bg-[#02013F] text-white font-mono font-bold text-xs px-2 py-0.5 rounded">
                   {stamp.role} Stamp
                 </span>
                 <span className="text-[10px] text-slate-500 font-semibold uppercase">
@@ -83,7 +83,7 @@ export const StampManagerModule: React.FC = () => {
                     type="checkbox"
                     checked={stamp.showOnCover}
                     onChange={(e) => updateStamp(stamp.role, { showOnCover: e.target.checked })}
-                    className="rounded border-slate-300 text-[#0B1F3A]"
+                    className="rounded border-slate-300 text-[#02013F]"
                   />
                   <span>Cover / Facesheet</span>
                 </label>
@@ -92,7 +92,7 @@ export const StampManagerModule: React.FC = () => {
                     type="checkbox"
                     checked={stamp.showOnMeasurement}
                     onChange={(e) => updateStamp(stamp.role, { showOnMeasurement: e.target.checked })}
-                    className="rounded border-slate-300 text-[#0B1F3A]"
+                    className="rounded border-slate-300 text-[#02013F]"
                   />
                   <span>Measurement Sheet</span>
                 </label>
@@ -101,7 +101,7 @@ export const StampManagerModule: React.FC = () => {
                     type="checkbox"
                     checked={stamp.showOnAbstract}
                     onChange={(e) => updateStamp(stamp.role, { showOnAbstract: e.target.checked })}
-                    className="rounded border-slate-300 text-[#0B1F3A]"
+                    className="rounded border-slate-300 text-[#02013F]"
                   />
                   <span>Abstract of Cost</span>
                 </label>
@@ -110,7 +110,7 @@ export const StampManagerModule: React.FC = () => {
                     type="checkbox"
                     checked={stamp.showOnGeneralAbstract}
                     onChange={(e) => updateStamp(stamp.role, { showOnGeneralAbstract: e.target.checked })}
-                    className="rounded border-slate-300 text-[#0B1F3A]"
+                    className="rounded border-slate-300 text-[#02013F]"
                   />
                   <span>General Abstract (Recap)</span>
                 </label>

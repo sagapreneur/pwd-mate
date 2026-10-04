@@ -11,16 +11,16 @@ export const LeadChartModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Quarry Haulage & Carriage Rates (Statement C-1)
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Quarry Lead Chart</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Quarry Lead Chart</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Non-linear distance slab lookup bands for quarried aggregates, sand, bricks and flat bitumen carriage (₹10 / MT / km).
           </p>
         </div>
-        <div className="bg-[#0B1F3A] text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
-          <Truck className="w-4 h-4 text-[#F4762A]" />
+        <div className="bg-[#02013F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
+          <Truck className="w-4 h-4 text-[#81C303]" />
           <span>Statement C-1 Auto-Lookup</span>
         </div>
       </div>
@@ -65,7 +65,7 @@ export const LeadChartModule: React.FC = () => {
                       onChange={(e) =>
                         updateLeadSetting(lead.materialId, lead.distanceKm, e.target.value)
                       }
-                      className="w-full text-xs p-1 rounded border border-slate-200 focus:border-[#0B1F3A] outline-none"
+                      className="w-full text-xs p-1 rounded border border-slate-200 focus:border-[#02013F] outline-none"
                     />
                   </td>
 
@@ -84,14 +84,14 @@ export const LeadChartModule: React.FC = () => {
                             lead.sourceQuarry
                           )
                         }
-                        className="w-24 text-xs text-right font-mono font-bold p-1 rounded border border-slate-200 focus:border-[#0B1F3A] outline-none tabular-nums-force"
+                        className="w-24 text-xs text-right font-mono font-bold p-1 rounded border border-slate-200 focus:border-[#02013F] outline-none tabular-nums-force"
                       />
                       <span className="text-xs text-slate-400 font-medium">km</span>
                     </div>
                   </td>
 
                   {/* Calculated C-1 Rate */}
-                  <td className="text-right font-mono font-bold text-xs tabular-nums-force text-[#0B1F3A] bg-slate-50/50">
+                  <td className="text-right font-mono font-bold text-xs tabular-nums-force text-[#02013F] bg-slate-50/50">
                     ₹{lead.calculatedRate.toFixed(2)}
                   </td>
 
@@ -103,7 +103,7 @@ export const LeadChartModule: React.FC = () => {
                           selectedAuditMaterial === lead.materialId ? null : lead.materialId
                         )
                       }
-                      className="text-slate-400 hover:text-[#F4762A] p-1 rounded hover:bg-slate-100"
+                      className="text-slate-400 hover:text-[#81C303] p-1 rounded hover:bg-slate-100"
                       title="View step calculation breakdown"
                     >
                       <Info className="w-3.5 h-3.5" />
@@ -118,8 +118,8 @@ export const LeadChartModule: React.FC = () => {
 
       {/* Audit Trail Explanation Drawer / Box */}
       {selectedAuditMaterial && (
-        <div className="bg-[#0B1F3A] text-white p-5 rounded-xl border border-[#14335C] space-y-2 text-xs">
-          <div className="flex items-center space-x-2 text-[#F4762A] font-bold">
+        <div className="bg-[#02013F] text-white p-5 rounded-xl border border-[#14136e] space-y-2 text-xs">
+          <div className="flex items-center space-x-2 text-[#81C303] font-bold">
             <HelpCircle className="w-4 h-4" />
             <span>
               Statement C-1 Non-Linear Mathematical Breakdown:{' '}

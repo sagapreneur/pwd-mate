@@ -47,19 +47,19 @@ export const MarathiDocsModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between no-print">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider font-sans">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider font-sans">
             Statutory Devanagari Administrative Suite
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">महाराष्ट्र सार्वजनिक बांधकाम विभाग — अधिकृत मराठी दस्तऐवज</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">महाराष्ट्र सार्वजनिक बांधकाम विभाग — अधिकृत मराठी दस्तऐवज</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             तांत्रिक मंजुरी आदेश, कार्यारंभ आदेश, ग्रामपंचायत ना-हरकत, हद्द प्रमाणपत्र व तपासणी सूची.
           </p>
         </div>
         <button
           onClick={() => window.print()}
-          className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#0B1F3A] hover:bg-[#14335C] text-white text-xs font-semibold shadow-sm"
+          className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#02013F] hover:bg-[#14136e] text-white text-xs font-semibold shadow-sm"
         >
-          <Printer className="w-4 h-4 text-[#F4762A]" />
+          <Printer className="w-4 h-4 text-[#81C303]" />
           <span className="font-sans">Print Document / Save PDF</span>
         </button>
       </div>
@@ -82,7 +82,7 @@ export const MarathiDocsModule: React.FC = () => {
             onClick={() => setSelectedDoc(tab.id as MarathiDocType)}
             className={`text-xs px-3.5 py-2 rounded-lg font-bold transition-all ${
               selectedDoc === tab.id
-                ? 'bg-[#0B1F3A] text-white shadow-sm ring-2 ring-[#F4762A]'
+                ? 'bg-[#02013F] text-white shadow-sm ring-2 ring-[#81C303]'
                 : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
             }`}
           >
@@ -94,8 +94,8 @@ export const MarathiDocsModule: React.FC = () => {
       {/* Interactive Controls Bar for Work Order & NOC */}
       {selectedDoc === 'WORK_ORDER' && (
         <div className="bg-slate-50 border border-slate-300 rounded-xl p-4 no-print space-y-3 text-xs">
-          <div className="font-bold text-[#0B1F3A] flex items-center space-x-1.5 font-sans">
-            <Award className="w-4 h-4 text-[#F4762A]" />
+          <div className="font-bold text-[#02013F] flex items-center space-x-1.5 font-sans">
+            <Award className="w-4 h-4 text-[#81C303]" />
             <span>कार्यारंभ आदेश तपशील (Work Order Settings):</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -159,8 +159,8 @@ export const MarathiDocsModule: React.FC = () => {
 
       {(selectedDoc === 'GRAM_PANCHAYAT_NOC' || selectedDoc === 'BOUNDARY_CERT') && (
         <div className="bg-slate-50 border border-slate-300 rounded-xl p-4 no-print space-y-3 text-xs">
-          <div className="font-bold text-[#0B1F3A] flex items-center space-x-1.5 font-sans">
-            <ShieldCheck className="w-4 h-4 text-[#F4762A]" />
+          <div className="font-bold text-[#02013F] flex items-center space-x-1.5 font-sans">
+            <ShieldCheck className="w-4 h-4 text-[#81C303]" />
             <span>स्थानिक संस्था व जागा तपशील (Site & Panchayat Details):</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
@@ -247,7 +247,7 @@ export const MarathiDocsModule: React.FC = () => {
           <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">
             महाराष्ट्र शासन — सार्वजनिक बांधकाम विभाग
           </div>
-          <div className="font-bold text-base text-[#0B1F3A]">
+          <div className="font-bold text-base text-[#02013F]">
             कार्यालय: {facesheet.subDivision}, {facesheet.division}
           </div>
         </div>
@@ -303,7 +303,7 @@ export const MarathiDocsModule: React.FC = () => {
               <div>दिनांक: {facesheet.techSanctionDate || new Date().toLocaleDateString('en-IN')}</div>
             </div>
 
-            <div className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <div className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               तांत्रिक मंजुरी आदेश (Technical Sanction Order)
             </div>
 
@@ -382,7 +382,7 @@ export const MarathiDocsModule: React.FC = () => {
               <div>दिनांक: {workStartDate}</div>
             </div>
 
-            <div className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <div className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               कार्यारंभ आदेश (Work Order / निविदा स्वीकृती आदेश)
             </div>
 
@@ -453,7 +453,7 @@ export const MarathiDocsModule: React.FC = () => {
               <div>दिनांक: {tharavDate}</div>
             </div>
 
-            <div className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <div className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               ना-हरकत प्रमाणपत्र (No Objection Certificate - NOC)
             </div>
 
@@ -487,7 +487,7 @@ export const MarathiDocsModule: React.FC = () => {
         {/* 5. Demarcation Certificate (हद्द प्रमाणपत्र) */}
         {selectedDoc === 'BOUNDARY_CERT' && (
           <div className="space-y-4 text-xs">
-            <div className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <div className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               हद्द व जागा निश्चिती प्रमाणपत्र (Demarcation & Boundary Certificate)
             </div>
 
@@ -534,7 +534,7 @@ export const MarathiDocsModule: React.FC = () => {
         {/* 6. General Report */}
         {selectedDoc === 'GENERAL_REPORT' && (
           <div className="space-y-4 text-xs">
-            <h3 className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <h3 className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               साधारण अहवाल (General Report / Project Narrative)
             </h3>
             <p className="text-justify indent-6">
@@ -564,7 +564,7 @@ export const MarathiDocsModule: React.FC = () => {
         {/* 7. Checklist */}
         {selectedDoc === 'CHECKLIST' && (
           <div className="space-y-4 text-xs">
-            <h3 className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <h3 className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               अंदाजपत्रक तांत्रिक तपासणी सूची (Technical Scrutiny Checklist)
             </h3>
             <table className="w-full border-collapse border border-slate-300 text-xs">
@@ -621,7 +621,7 @@ export const MarathiDocsModule: React.FC = () => {
         {/* 8. Appendix B */}
         {selectedDoc === 'APPENDIX_B' && (
           <div className="space-y-4 text-xs">
-            <h3 className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <h3 className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               परिशिष्ट "ब" प्रमाणपत्र (Appendix B Certificate)
             </h3>
             <p className="text-justify indent-6">
@@ -643,7 +643,7 @@ export const MarathiDocsModule: React.FC = () => {
         {/* 9. Non-Submergence */}
         {selectedDoc === 'NON_SUBMERGENCE' && (
           <div className="space-y-4 text-xs">
-            <h3 className="text-center font-bold text-base text-[#0B1F3A] border-b pb-2">
+            <h3 className="text-center font-bold text-base text-[#02013F] border-b pb-2">
               पूर पातळी प्रमाणपत्र (Non-Submergence Certificate)
             </h3>
             <p className="text-justify indent-6">

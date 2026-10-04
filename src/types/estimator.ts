@@ -172,6 +172,7 @@ export interface SavedEstimateRecord {
 
 export type ActiveTab =
   | 'myEstimates'
+  | 'templates'
   | 'facesheet'
   | 'catalog'
   | 'measurements'

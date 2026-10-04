@@ -52,10 +52,10 @@ export const SteelBBSModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Parametric Rebar Detailing & Scheduling
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Structural Steel Bar Bending Schedule (BBS)</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Structural Steel Bar Bending Schedule (BBS)</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Formula: w = D² / 162.28 kg/m (TMT Fe-500). Evaluates cutting lengths, clear covers and hooks with 1-click measurement push.
           </p>
@@ -63,9 +63,9 @@ export const SteelBBSModule: React.FC = () => {
 
         {/* Tonnage Rollup & Push CTA */}
         <div className="flex items-center space-x-3">
-          <div className="bg-[#071426] text-white px-4 py-2 rounded-lg border border-[#F4762A] text-right">
+          <div className="bg-[#02013F] text-white px-4 py-2 rounded-lg border border-[#81C303] text-right">
             <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Total Steel Mass</div>
-            <div className="text-lg font-bold text-[#F4762A] tabular-nums-force">
+            <div className="text-lg font-bold text-[#81C303] tabular-nums-force">
               {totalKg.toLocaleString('en-IN')} kg <span className="text-xs text-white">({totalMT} MT)</span>
             </div>
           </div>
@@ -78,7 +78,7 @@ export const SteelBBSModule: React.FC = () => {
                 ? 'bg-emerald-600 text-white'
                 : bbsElements.length === 0
                 ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                : 'bg-[#F4762A] hover:bg-[#D65F14] text-white hover:scale-105 active:scale-95'
+                : 'bg-[#81C303] hover:bg-[#72ad02] text-white hover:scale-105 active:scale-95'
             }`}
           >
             {pushedSuccess ? (
@@ -100,8 +100,8 @@ export const SteelBBSModule: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Parametric Wizard Form */}
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-4">
-          <div className="flex items-center space-x-2 text-[#0B1F3A] font-bold text-xs border-b border-slate-100 pb-2.5">
-            <Grid className="w-4 h-4 text-[#F4762A]" />
+          <div className="flex items-center space-x-2 text-[#02013F] font-bold text-xs border-b border-slate-100 pb-2.5">
+            <Grid className="w-4 h-4 text-[#81C303]" />
             <span>Parametric Structural Element Wizard</span>
           </div>
 
@@ -225,9 +225,9 @@ export const SteelBBSModule: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full py-2 bg-[#0B1F3A] hover:bg-[#14335C] text-white text-xs font-bold rounded-lg shadow-sm flex items-center justify-center space-x-1 transition-all"
+              className="w-full py-2 bg-[#02013F] hover:bg-[#14136e] text-white text-xs font-bold rounded-lg shadow-sm flex items-center justify-center space-x-1 transition-all"
             >
-              <Plus className="w-3.5 h-3.5 text-[#F4762A]" />
+              <Plus className="w-3.5 h-3.5 text-[#81C303]" />
               <span>Calculate & Add to Schedule</span>
             </button>
           </form>
@@ -236,7 +236,7 @@ export const SteelBBSModule: React.FC = () => {
         {/* BBS Schedule Table */}
         <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
           <div className="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-            <h3 className="font-bold text-xs text-[#0B1F3A] uppercase tracking-wider">
+            <h3 className="font-bold text-xs text-[#02013F] uppercase tracking-wider">
               Bar Bending Schedule Ledger
             </h3>
             <span className="text-xs text-slate-500 font-mono">
@@ -286,7 +286,7 @@ export const SteelBBSModule: React.FC = () => {
                       <td className="text-right font-mono text-xs text-slate-500 tabular-nums-force">
                         {el.unitWeightKgM.toFixed(3)}
                       </td>
-                      <td className="text-right font-mono font-bold text-xs text-[#0B1F3A] tabular-nums-force bg-slate-50/50">
+                      <td className="text-right font-mono font-bold text-xs text-[#02013F] tabular-nums-force bg-slate-50/50">
                         {el.totalWeightKg.toFixed(2)}
                       </td>
                       <td className="text-center">
@@ -306,13 +306,13 @@ export const SteelBBSModule: React.FC = () => {
           </div>
 
           {/* Schedule Footer */}
-          <div className="bg-[#0B1F3A] text-white p-3.5 flex items-center justify-between border-t border-[#14335C]">
+          <div className="bg-[#02013F] text-white p-3.5 flex items-center justify-between border-t border-[#14136e]">
             <span className="text-xs font-semibold text-slate-300">Total Structural Rebar Mass:</span>
             <div className="flex items-center space-x-3">
-              <span className="text-sm font-bold text-[#F4762A] tabular-nums-force">
+              <span className="text-sm font-bold text-[#81C303] tabular-nums-force">
                 {totalKg.toLocaleString('en-IN')} kg
               </span>
-              <span className="bg-[#F4762A] text-white text-xs font-mono font-bold px-2 py-0.5 rounded">
+              <span className="bg-[#81C303] text-white text-xs font-mono font-bold px-2 py-0.5 rounded">
                 = {totalMT} Metric Tonnes
               </span>
             </div>

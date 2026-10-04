@@ -14,19 +14,19 @@ export const RoyaltyModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Statutory Minor Mineral Extraction Levies / Schedule 'B'
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Statutory Royalty Statement</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Statutory Royalty Statement</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Governed by Maharashtra Minor Mineral Extraction Rules: Natural Sand (₹150 / Cu.M), Coarse Aggregates & Murum (₹80 / Cu.M).
           </p>
         </div>
-        <div className="bg-[#071426] text-white px-5 py-2.5 rounded-lg border border-[#F4762A] text-right">
+        <div className="bg-[#02013F] text-white px-5 py-2.5 rounded-lg border border-[#81C303] text-right">
           <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
             Schedule B (Total Royalty)
           </div>
-          <div className="text-xl font-bold text-[#F4762A] tabular-nums-force">
+          <div className="text-xl font-bold text-[#81C303] tabular-nums-force">
             ₹{totalRoyalty.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </div>
         </div>
@@ -65,7 +65,7 @@ export const RoyaltyModule: React.FC = () => {
                     <td className="text-right font-mono text-xs text-slate-600 tabular-nums-force">
                       ₹{row.royaltyRate.toFixed(2)}
                     </td>
-                    <td className="text-right font-mono font-bold text-xs text-[#0B1F3A] tabular-nums-force bg-slate-50/50">
+                    <td className="text-right font-mono font-bold text-xs text-[#02013F] tabular-nums-force bg-slate-50/50">
                       ₹{row.amount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </td>
                   </tr>
@@ -76,12 +76,12 @@ export const RoyaltyModule: React.FC = () => {
         </div>
 
         {/* Schedule B Footer */}
-        <div className="bg-[#0B1F3A] text-white p-4 flex items-center justify-between border-t border-[#14335C]">
+        <div className="bg-[#02013F] text-white p-4 flex items-center justify-between border-t border-[#14136e]">
           <div className="flex items-center space-x-2 text-xs font-semibold text-slate-300">
-            <Coins className="w-4 h-4 text-[#F4762A]" />
+            <Coins className="w-4 h-4 text-[#81C303]" />
             <span>Schedule 'B' Total Statutory Minor Mineral Royalty:</span>
           </div>
-          <div className="text-lg font-bold text-[#F4762A] tabular-nums-force">
+          <div className="text-lg font-bold text-[#81C303] tabular-nums-force">
             ₹{totalRoyalty.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </div>
         </div>

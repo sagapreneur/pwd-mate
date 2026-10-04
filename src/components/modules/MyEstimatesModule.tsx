@@ -143,7 +143,7 @@ export const MyEstimatesModule: React.FC = () => {
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center space-x-2">
-            <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
               Project Vault & Document Manager
             </span>
             {currentEstimateId && (
@@ -153,7 +153,7 @@ export const MyEstimatesModule: React.FC = () => {
               </span>
             )}
           </div>
-          <h2 className="text-xl font-bold text-[#0B1F3A] mt-0.5">My Saved Estimates (सर्व जतन केलेले अंदाजपत्रक)</h2>
+          <h2 className="text-xl font-bold text-[#02013F] mt-0.5">My Saved Estimates (सर्व जतन केलेले अंदाजपत्रक)</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Open, edit, duplicate, rename, or create fresh Maharashtra PWD estimates. Every single field, item, and measurement is 100% editable.
           </p>
@@ -162,11 +162,20 @@ export const MyEstimatesModule: React.FC = () => {
         {/* Global Action Buttons */}
         <div className="flex items-center space-x-2.5 shrink-0">
           <button
+            onClick={() => setActiveTab('templates')}
+            className="flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-[#FBFFEB] hover:bg-[#81C303]/20 text-[#02013F] text-xs font-bold border border-[#81C303]/40 shadow-xs transition-all hover:scale-105 active:scale-95"
+            title="Launch Smart Estimate Templates wizard"
+          >
+            <Sparkles className="w-4 h-4 text-[#81C303]" />
+            <span>Smart Templates</span>
+          </button>
+
+          <button
             onClick={handleSaveActive}
-            className="flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-[#0B1F3A] hover:bg-[#14335C] text-white text-xs font-bold shadow-sm transition-all hover:scale-105 active:scale-95"
+            className="flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-[#02013F] hover:bg-[#14136e] text-white text-xs font-bold shadow-sm transition-all hover:scale-105 active:scale-95"
             title="Save currently loaded estimate to your library"
           >
-            <Save className="w-4 h-4 text-[#F4762A]" />
+            <Save className="w-4 h-4 text-[#81C303]" />
             <span>{saveToast ? 'Saved to Library!' : 'Save Active Estimate'}</span>
           </button>
 
@@ -176,7 +185,7 @@ export const MyEstimatesModule: React.FC = () => {
             title="Create a fresh blank estimate"
           >
             <Plus className="w-4 h-4" />
-            <span>+ New Estimate</span>
+            <span>New Estimate</span>
           </button>
         </div>
       </div>
@@ -186,10 +195,10 @@ export const MyEstimatesModule: React.FC = () => {
         <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
           <div>
             <div className="text-[10px] uppercase font-bold text-slate-400">Total Saved Estimates</div>
-            <div className="text-2xl font-bold text-[#0B1F3A] tabular-nums-force">{savedEstimates.length}</div>
+            <div className="text-2xl font-bold text-[#02013F] tabular-nums-force">{savedEstimates.length}</div>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#0B1F3A]">
-            <FolderArchive className="w-5 h-5 text-[#0B1F3A]" />
+          <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#02013F]">
+            <FolderArchive className="w-5 h-5 text-[#02013F]" />
           </div>
         </div>
 
@@ -208,16 +217,16 @@ export const MyEstimatesModule: React.FC = () => {
         <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
           <div>
             <div className="text-[10px] uppercase font-bold text-slate-400">Active Workspace Work</div>
-            <div className="text-xs font-bold text-[#0B1F3A] truncate max-w-[200px]" title={facesheet.nameOfWork}>
+            <div className="text-xs font-bold text-[#02013F] truncate max-w-[200px]" title={facesheet.nameOfWork}>
               {facesheet.nameOfWork}
             </div>
-            <div className="text-[11px] text-[#F4762A] font-semibold tabular-nums-force">
+            <div className="text-[11px] text-[#81C303] font-semibold tabular-nums-force">
               ₹{calculationRollup.sanctionedTotal.toLocaleString('en-IN')} ({facesheet.status})
             </div>
           </div>
           <button
             onClick={() => setActiveTab('facesheet')}
-            className="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded text-xs font-semibold text-[#0B1F3A] flex items-center space-x-1"
+            className="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded text-xs font-semibold text-[#02013F] flex items-center space-x-1"
           >
             <span>Edit Details</span>
             <ArrowRight className="w-3 h-3" />
@@ -234,7 +243,7 @@ export const MyEstimatesModule: React.FC = () => {
             placeholder="Search saved estimates by work name, division or sub-division..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-[#0B1F3A] outline-none"
+            className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-[#02013F] outline-none"
           />
         </div>
 
@@ -250,7 +259,7 @@ export const MyEstimatesModule: React.FC = () => {
             <FolderArchive className="w-8 h-8" />
           </div>
           <div>
-            <h3 className="font-bold text-base text-[#0B1F3A]">No Saved Estimates Found</h3>
+            <h3 className="font-bold text-base text-[#02013F]">No Saved Estimates Found</h3>
             <p className="text-xs text-slate-500 max-w-md mx-auto mt-1">
               {searchQuery
                 ? `No estimates matched "${searchQuery}". Try a different keyword.`
@@ -272,7 +281,7 @@ export const MyEstimatesModule: React.FC = () => {
                 loadGoldenMasterDemo();
                 saveCurrentEstimate();
               }}
-              className="flex items-center space-x-1 px-4 py-2 bg-[#0B1F3A] text-white text-xs font-bold rounded-lg shadow-sm hover:bg-[#14335C]"
+              className="flex items-center space-x-1 px-4 py-2 bg-[#02013F] text-white text-xs font-bold rounded-lg shadow-sm hover:bg-[#14136e]"
             >
               <Sparkles className="w-4 h-4 text-amber-400" />
               <span>Load & Save Wardha SP Office Demo</span>
@@ -296,7 +305,7 @@ export const MyEstimatesModule: React.FC = () => {
                 key={est.id}
                 className={`bg-white rounded-xl border p-5 transition-all ${
                   isActive
-                    ? 'border-[#F4762A] ring-2 ring-[#F4762A]/20 shadow-md bg-orange-50/10'
+                    ? 'border-[#81C303] ring-2 ring-[#81C303]/20 shadow-md bg-orange-50/10'
                     : 'border-slate-200 hover:border-slate-300 hover:shadow-sm'
                 }`}
               >
@@ -304,7 +313,7 @@ export const MyEstimatesModule: React.FC = () => {
                   {/* Left Info */}
                   <div className="space-y-1.5 max-w-3xl">
                     <div className="flex items-center space-x-2">
-                      <span className="bg-[#0B1F3A] text-white text-[10px] font-bold px-2 py-0.5 rounded font-mono">
+                      <span className="bg-[#02013F] text-white text-[10px] font-bold px-2 py-0.5 rounded font-mono">
                         SSR {est.facesheet?.ssrYear || '2022-23'}
                       </span>
                       <span className="text-[11px] text-slate-600 font-semibold bg-slate-100 px-2 py-0.5 rounded">
@@ -324,7 +333,7 @@ export const MyEstimatesModule: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <h3
                         onClick={() => handleEdit(est.id)}
-                        className="font-bold text-sm text-[#0B1F3A] hover:text-[#F4762A] cursor-pointer transition-colors leading-snug"
+                        className="font-bold text-sm text-[#02013F] hover:text-[#81C303] cursor-pointer transition-colors leading-snug"
                         title="Click to edit estimate details, items, and measurements"
                       >
                         {est.nameOfWork}
@@ -334,7 +343,7 @@ export const MyEstimatesModule: React.FC = () => {
                           setQuickRenameRecord(est);
                           setQuickRenameText(est.nameOfWork);
                         }}
-                        className="p-1 hover:bg-slate-100 rounded text-slate-400 hover:text-[#F4762A]"
+                        className="p-1 hover:bg-slate-100 rounded text-slate-400 hover:text-[#81C303]"
                         title="Rename this estimate title"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
@@ -361,10 +370,10 @@ export const MyEstimatesModule: React.FC = () => {
                   <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 shrink-0">
                     <div className="text-left sm:text-right bg-slate-50 px-3.5 py-2 rounded-lg border border-slate-200 min-w-[150px]">
                       <div className="text-[10px] uppercase font-bold text-slate-400">Sanctioned Cost</div>
-                      <div className="text-base font-bold text-[#0B1F3A] tabular-nums-force">
+                      <div className="text-base font-bold text-[#02013F] tabular-nums-force">
                         ₹{est.sanctionedAmount?.toLocaleString('en-IN') || '0.00'}
                       </div>
-                      <div className="text-[10px] font-semibold text-[#F4762A]">
+                      <div className="text-[10px] font-semibold text-[#81C303]">
                         ₹{((est.sanctionedAmount || 0) / 100000).toFixed(2)} Lakhs
                       </div>
                     </div>
@@ -374,10 +383,10 @@ export const MyEstimatesModule: React.FC = () => {
                       {/* Edit / Open Button */}
                       <button
                         onClick={() => handleEdit(est.id)}
-                        className="flex items-center space-x-1 px-3 py-2 bg-[#0B1F3A] hover:bg-[#14335C] text-white text-xs font-bold rounded-lg shadow-sm transition-all hover:scale-105 active:scale-95"
+                        className="flex items-center space-x-1 px-3 py-2 bg-[#02013F] hover:bg-[#14136e] text-white text-xs font-bold rounded-lg shadow-sm transition-all hover:scale-105 active:scale-95"
                         title="Load this estimate to edit name, division, items, and measurements"
                       >
-                        <Edit3 className="w-3.5 h-3.5 text-[#F4762A]" />
+                        <Edit3 className="w-3.5 h-3.5 text-[#81C303]" />
                         <span>Edit / Open</span>
                       </button>
 
@@ -439,7 +448,7 @@ export const MyEstimatesModule: React.FC = () => {
           <div className="bg-white rounded-xl shadow-2xl border border-slate-200 w-full max-w-lg p-6 space-y-4 text-slate-800 animate-fadeIn">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
-                <h3 className="font-bold text-base text-[#0B1F3A]">Create New Estimate (नवीन अंदाजपत्रक)</h3>
+                <h3 className="font-bold text-base text-[#02013F]">Create New Estimate (नवीन अंदाजपत्रक)</h3>
                 <p className="text-xs text-slate-500 mt-0.5">Start a fresh Maharashtra PWD estimate with custom work title.</p>
               </div>
               <button
@@ -460,7 +469,7 @@ export const MyEstimatesModule: React.FC = () => {
                   value={newWorkTitle}
                   onChange={(e) => setNewWorkTitle(e.target.value)}
                   placeholder="उदा. मौजे कासारवाडी येथे अंतर्गत सिमेंट काँक्रीट रस्ता व नाली बांधकाम करणे..."
-                  className="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0B1F3A] outline-none font-medium text-slate-800"
+                  className="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#02013F] outline-none font-medium text-slate-800"
                   required
                 />
               </div>
@@ -499,7 +508,7 @@ export const MyEstimatesModule: React.FC = () => {
           <div className="bg-white rounded-xl shadow-2xl border border-slate-200 w-full max-w-lg p-6 space-y-4 text-slate-800 animate-fadeIn">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
-                <h3 className="font-bold text-base text-[#0B1F3A]">Rename Saved Estimate (कामाचे नाव बदला)</h3>
+                <h3 className="font-bold text-base text-[#02013F]">Rename Saved Estimate (कामाचे नाव बदला)</h3>
                 <p className="text-xs text-slate-500 mt-0.5">Update project title in your saved estimates library.</p>
               </div>
               <button
@@ -519,7 +528,7 @@ export const MyEstimatesModule: React.FC = () => {
                   rows={3}
                   value={quickRenameText}
                   onChange={(e) => setQuickRenameText(e.target.value)}
-                  className="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0B1F3A] outline-none font-semibold text-slate-800"
+                  className="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#02013F] outline-none font-semibold text-slate-800"
                   required
                 />
               </div>
@@ -534,7 +543,7 @@ export const MyEstimatesModule: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 text-xs font-bold bg-[#0B1F3A] hover:bg-[#14335C] text-white rounded-lg shadow-sm"
+                  className="px-5 py-2 text-xs font-bold bg-[#02013F] hover:bg-[#14136e] text-white rounded-lg shadow-sm"
                 >
                   Save Changes
                 </button>

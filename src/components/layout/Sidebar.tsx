@@ -20,7 +20,9 @@ import {
   FolderArchive,
   CheckCircle2,
   Printer,
+  Sparkles,
 } from 'lucide-react';
+import { PWD_SMART_TEMPLATES } from '../../data/templates';
 
 export const Sidebar: React.FC = () => {
   const { activeTab, setActiveTab, facesheet, items, savedEstimates } = useEstimatorStore();
@@ -43,39 +45,67 @@ export const Sidebar: React.FC = () => {
     { id: 'stamps', label: '12. Digital Stamp Manager', icon: <Stamp className="w-4 h-4" /> },
     { id: 'marathiDocs', label: '13. Marathi Statutory Docs', icon: <Languages className="w-4 h-4" /> },
     { id: 'admin', label: '14. Admin & Test Benchmarks', icon: <Settings className="w-4 h-4" /> },
-    { id: 'dossier', label: '15. Printable Dossier (PDF)', icon: <Printer className="w-4 h-4 text-[#F4762A]" />, badge: 'A4 Dossier' },
+    { id: 'dossier', label: '15. Printable Dossier (PDF)', icon: <Printer className="w-4 h-4 text-[#81C303]" />, badge: 'A4 Dossier' },
   ];
 
   return (
-    <aside className="fixed left-0 top-0 bottom-0 w-64 bg-[#071426] text-white flex flex-col border-r border-[#14335C] select-none no-print z-30">
-      {/* Brand Header */}
-      <div className="p-4 border-b border-[#14335C] bg-[#0B1F3A] flex items-center space-x-3 shrink-0">
-        <div className="w-10 h-10 rounded bg-[#F4762A] flex items-center justify-center text-white shadow-md font-bold text-lg">
-          <Building2 className="w-6 h-6" />
-        </div>
-        <div>
-          <h1 className="font-bold text-sm tracking-wide text-white uppercase leading-tight">PWD Mate</h1>
-          <p className="text-[11px] text-[#FDEBDD] font-medium tracking-wider uppercase">Estimate & TS Pro MH</p>
-        </div>
+    <aside className="fixed left-0 top-0 bottom-0 w-64 bg-white text-[#111827] flex flex-col border-r border-[#E5E7EB] select-none no-print z-30 shadow-xs">
+      {/* Brand Header with Larger Logo */}
+      <div className="p-4 border-b border-[#E5E7EB] bg-white flex items-center justify-center shrink-0">
+        <img
+          src="/kardecalc-logo.png"
+          alt="KardeCalc"
+          className="h-11 w-auto max-w-[210px] object-contain drop-shadow-xs"
+        />
       </div>
 
       {/* Navigation Groups */}
       <div className="flex-1 overflow-y-auto py-3 px-2 space-y-4">
-        {/* My Estimates Button CTA */}
-        <div className="px-1 pb-1">
+        {/* Quick Launch & Library */}
+        <div className="px-1 pb-1 space-y-1.5">
           <button
-            onClick={() => setActiveTab('myEstimates')}
-            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold transition-all shadow-sm ${
-              activeTab === 'myEstimates'
-                ? 'bg-[#F4762A] text-white shadow-md ring-2 ring-[#F4762A]/40'
-                : 'bg-[#0B1F3A] hover:bg-[#14335C] text-slate-200 border border-slate-700'
+            onClick={() => setActiveTab('templates')}
+            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs transition-all ${
+              activeTab === 'templates'
+                ? 'bg-[#FBFFEB] text-[#02013F] shadow-xs border border-[#81C303]/40 border-l-4 border-l-[#81C303] font-bold'
+                : 'bg-[#F8FAFC] hover:bg-[#FBFFEB] text-[#64748B] hover:text-[#02013F] border border-[#E5E7EB] font-medium'
             }`}
           >
             <div className="flex items-center space-x-2.5">
-              <FolderArchive className="w-4 h-4 text-amber-400" />
+              <Sparkles className={`w-4 h-4 ${activeTab === 'templates' ? 'text-[#81C303]' : 'text-slate-400'}`} />
+              <span>Smart Templates</span>
+            </div>
+            <span
+              className={`text-[10px] px-1.5 py-0.5 rounded font-mono font-bold ${
+                activeTab === 'templates'
+                  ? 'bg-[#02013F] text-white'
+                  : 'bg-slate-200 text-[#02013F]'
+              }`}
+            >
+              {PWD_SMART_TEMPLATES.length} Archetypes
+            </span>
+          </button>
+
+          {/* My Estimates Button CTA */}
+          <button
+            onClick={() => setActiveTab('myEstimates')}
+            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs transition-all ${
+              activeTab === 'myEstimates'
+                ? 'bg-[#FBFFEB] text-[#02013F] shadow-xs border border-[#81C303]/40 border-l-4 border-l-[#81C303] font-bold'
+                : 'bg-[#F8FAFC] hover:bg-[#FBFFEB] text-[#64748B] hover:text-[#02013F] border border-[#E5E7EB] font-medium'
+            }`}
+          >
+            <div className="flex items-center space-x-2.5">
+              <FolderArchive className={`w-4 h-4 ${activeTab === 'myEstimates' ? 'text-[#81C303]' : 'text-slate-400'}`} />
               <span>My Saved Estimates</span>
             </div>
-            <span className="text-[10px] bg-black/40 px-2 py-0.5 rounded-full font-mono text-white">
+            <span
+              className={`text-[10px] px-2 py-0.5 rounded-full font-mono font-bold ${
+                activeTab === 'myEstimates'
+                  ? 'bg-[#02013F] text-white'
+                  : 'bg-slate-200 text-[#02013F]'
+              }`}
+            >
               {savedEstimates.length}
             </span>
           </button>
@@ -83,7 +113,7 @@ export const Sidebar: React.FC = () => {
 
         {/* Core Workspace */}
         <div>
-          <div className="px-3 pb-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+          <div className="px-3 pb-1 text-[10px] font-bold text-[#64748B] uppercase tracking-wider">
             Estimate Workspace
           </div>
           <div className="space-y-0.5">
@@ -93,20 +123,22 @@ export const Sidebar: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`w-full flex items-center justify-between px-3 py-2 rounded text-xs font-medium transition-all ${
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-[#14335C] text-white shadow-sm border-l-4 border-[#F4762A] font-semibold'
-                      : 'text-slate-300 hover:bg-[#0B1F3A] hover:text-white'
+                      ? 'bg-[#FBFFEB] text-[#02013F] shadow-xs border-l-4 border-[#81C303] font-semibold'
+                      : 'text-[#64748B] hover:bg-[#F8FAFC] hover:text-[#02013F]'
                   }`}
                 >
                   <div className="flex items-center space-x-2.5 truncate">
-                    <span className={isActive ? 'text-[#F4762A]' : 'text-slate-400'}>{item.icon}</span>
+                    <span className={isActive ? 'text-[#81C303]' : 'text-[#94A3B8]'}>{item.icon}</span>
                     <span className="truncate">{item.label}</span>
                   </div>
                   {item.badge && (
                     <span
                       className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${
-                        isActive ? 'bg-[#F4762A] text-white' : 'bg-slate-800 text-slate-400'
+                        isActive
+                          ? 'bg-[#81C303] text-[#02013F] font-bold'
+                          : 'bg-slate-100 text-[#64748B] border border-[#E5E7EB]'
                       }`}
                     >
                       {item.badge}
@@ -120,7 +152,7 @@ export const Sidebar: React.FC = () => {
 
         {/* Governance & Compliance */}
         <div>
-          <div className="px-3 pb-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+          <div className="px-3 pb-1 text-[10px] font-bold text-[#64748B] uppercase tracking-wider">
             Statutory & Admin
           </div>
           <div className="space-y-0.5">
@@ -130,20 +162,22 @@ export const Sidebar: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`w-full flex items-center justify-between px-3 py-2 rounded text-xs font-medium transition-all ${
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-[#14335C] text-white shadow-sm border-l-4 border-[#F4762A] font-semibold'
-                      : 'text-slate-300 hover:bg-[#0B1F3A] hover:text-white'
+                      ? 'bg-[#FBFFEB] text-[#02013F] shadow-xs border-l-4 border-[#81C303] font-semibold'
+                      : 'text-[#64748B] hover:bg-[#F8FAFC] hover:text-[#02013F]'
                   }`}
                 >
                   <div className="flex items-center space-x-2.5 truncate">
-                    <span className={isActive ? 'text-[#F4762A]' : 'text-slate-400'}>{item.icon}</span>
+                    <span className={isActive ? 'text-[#81C303]' : 'text-[#94A3B8]'}>{item.icon}</span>
                     <span className="truncate">{item.label}</span>
                   </div>
                   {item.badge && (
                     <span
                       className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${
-                        isActive ? 'bg-[#F4762A] text-white' : 'bg-amber-950/80 text-[#F4762A] border border-[#F4762A]/40'
+                        isActive
+                          ? 'bg-[#81C303] text-[#02013F] font-bold'
+                          : 'bg-slate-100 text-[#64748B] border border-[#E5E7EB]'
                       }`}
                     >
                       {item.badge}
@@ -157,14 +191,13 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Division Footer Badge */}
-      <div className="p-3 bg-[#0B1F3A] border-t border-[#14335C] text-[11px] shrink-0">
-        <div className="flex items-center justify-between text-slate-300 mb-1">
-          <span className="font-semibold text-white truncate">{facesheet.division}</span>
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-        </div>
-        <div className="flex items-center justify-between text-[10px] text-slate-400">
-          <span>{facesheet.circle}</span>
-          <span className="bg-emerald-950 text-emerald-300 px-1 rounded font-mono">ONLINE</span>
+      <div className="p-3 bg-[#F8FAFC] border-t border-[#E5E7EB] text-[11px] shrink-0">
+        <div className="flex items-center justify-between text-[#111827]">
+          <span className="font-semibold text-[#02013F] truncate">{facesheet.division}</span>
+          <div className="flex items-center space-x-1 shrink-0 ml-1">
+            <span className="bg-[#FBFFEB] text-[#81C303] border border-[#81C303]/40 px-1.5 py-0.5 rounded font-mono text-[9px] font-bold">ONLINE</span>
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#81C303]" />
+          </div>
         </div>
       </div>
     </aside>

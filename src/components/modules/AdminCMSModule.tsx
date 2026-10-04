@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useEstimatorStore } from '../../store/useEstimatorStore';
 import { SSR_MASTER_ITEMS, INITIAL_LEAD_SETTINGS } from '../../data/ssrMaster';
+import { PWD_SMART_TEMPLATES } from '../../data/templates';
 import {
   calculateRowQuantity,
   calculateStatementC1Lead,
   calculateDynamicItemRate,
   calculateSteelBBS,
 } from '../../engine/calculationEngine';
-import { Settings, ShieldCheck, CheckCircle2, AlertCircle, Play, Database, FileText } from 'lucide-react';
+import { Settings, ShieldCheck, CheckCircle2, AlertCircle, Play, Database, FileText, Sparkles, Wand2 } from 'lucide-react';
 
 export const AdminCMSModule: React.FC = () => {
-  const { loadGoldenMasterDemo, items } = useEstimatorStore();
+  const { loadGoldenMasterDemo, items, setActiveTab } = useEstimatorStore();
 
   const [testResults, setTestResults] = useState<{
     id: string;
@@ -92,6 +93,15 @@ export const AdminCMSModule: React.FC = () => {
       passed: Math.abs(rate2102.groundFloorRate - 222.1) < 0.05,
     });
 
+    // Test 7: Smart Construction Templates System
+    results.push({
+      id: 't7',
+      title: `Smart Templates Integrity (${PWD_SMART_TEMPLATES.length} Archetypes Configured)`,
+      expected: '>= 9 PWD Archetypes Active',
+      actual: `${PWD_SMART_TEMPLATES.length} PWD Archetypes Active`,
+      passed: PWD_SMART_TEMPLATES.length >= 9,
+    });
+
     setTestResults(results);
   };
 
@@ -100,19 +110,19 @@ export const AdminCMSModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Back-Office Administration & Verification
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Admin Portal & Golden Master Test Suite</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Admin Portal & Golden Master Test Suite</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Automated mathematical regression test suite validating against authentic Maharashtra PWD reference workbooks.
           </p>
         </div>
         <button
           onClick={runVerificationSuite}
-          className="flex items-center space-x-1.5 px-4 py-2 rounded-lg bg-[#0B1F3A] hover:bg-[#14335C] text-white text-xs font-bold shadow transition-all hover:scale-105 active:scale-95"
+          className="flex items-center space-x-1.5 px-4 py-2 rounded-lg bg-[#02013F] hover:bg-[#14136e] text-white text-xs font-bold shadow transition-all hover:scale-105 active:scale-95"
         >
-          <Play className="w-3.5 h-3.5 text-[#F4762A]" />
+          <Play className="w-3.5 h-3.5 text-[#81C303]" />
           <span>Run Automated Verification Suite</span>
         </button>
       </div>
@@ -121,7 +131,7 @@ export const AdminCMSModule: React.FC = () => {
       {testResults && (
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-            <h3 className="font-bold text-xs text-[#0B1F3A] uppercase tracking-wider flex items-center space-x-2">
+            <h3 className="font-bold text-xs text-[#02013F] uppercase tracking-wider flex items-center space-x-2">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
               <span>Regression Test Execution Results ({testResults.filter((t) => t.passed).length}/{testResults.length} Passed)</span>
             </h3>
@@ -158,7 +168,7 @@ export const AdminCMSModule: React.FC = () => {
                     <td className="text-right font-mono text-xs text-slate-600 tabular-nums-force">
                       {t.expected}
                     </td>
-                    <td className="text-right font-mono font-bold text-xs text-[#0B1F3A] tabular-nums-force bg-slate-50/50">
+                    <td className="text-right font-mono font-bold text-xs text-[#02013F] tabular-nums-force bg-slate-50/50">
                       {t.actual}
                     </td>
                   </tr>
@@ -170,27 +180,44 @@ export const AdminCMSModule: React.FC = () => {
       )}
 
       {/* Master Data Metrics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-2">
-          <div className="flex items-center space-x-2 text-[#0B1F3A] font-bold text-xs">
-            <Database className="w-4 h-4 text-[#F4762A]" />
+          <div className="flex items-center space-x-2 text-[#02013F] font-bold text-xs">
+            <Database className="w-4 h-4 text-[#81C303]" />
             <span>SSR Catalog Master</span>
           </div>
-          <div className="text-2xl font-bold text-[#0B1F3A] tabular-nums-force">
+          <div className="text-2xl font-bold text-[#02013F] tabular-nums-force">
             {SSR_MASTER_ITEMS.length} Items Seeded
           </div>
           <p className="text-[11px] text-slate-500">
-            Chapters 1 to 54: Excavation, Concrete, Reinforcement, Masonry, Plastering, Roads & Waterproofing.
+            Chapters 1 to 112: Excavation, Concrete, Reinforcement, Masonry, Plastering, Roads & Waterproofing.
           </p>
         </div>
 
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-2">
-          <div className="flex items-center space-x-2 text-[#0B1F3A] font-bold text-xs">
-            <FileText className="w-4 h-4 text-[#F4762A]" />
+          <div className="flex items-center space-x-2 text-[#02013F] font-bold text-xs">
+            <Sparkles className="w-4 h-4 text-[#81C303]" />
+            <span>Smart Templates</span>
+          </div>
+          <div className="text-2xl font-bold text-[#02013F] tabular-nums-force">
+            {PWD_SMART_TEMPLATES.length} Archetypes
+          </div>
+          <button
+            onClick={() => setActiveTab('templates')}
+            className="w-full mt-2 py-1.5 bg-[#FBFFEB] hover:bg-[#81C303]/20 text-[#02013F] text-xs font-bold rounded-lg border border-[#81C303]/50 transition-all flex items-center justify-center space-x-1"
+          >
+            <Wand2 className="w-3.5 h-3.5 text-[#81C303]" />
+            <span>Open Library</span>
+          </button>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-2">
+          <div className="flex items-center space-x-2 text-[#02013F] font-bold text-xs">
+            <FileText className="w-4 h-4 text-[#81C303]" />
             <span>Quarry Lead Standards</span>
           </div>
-          <div className="text-2xl font-bold text-[#0B1F3A] tabular-nums-force">
-            13 Materials
+          <div className="text-2xl font-bold text-[#02013F] tabular-nums-force">
+            18 Materials
           </div>
           <p className="text-[11px] text-slate-500">
             Statement C-1 non-linear distance lookups with authentic Wardha and Nagpur district quarry baselines.
@@ -198,15 +225,15 @@ export const AdminCMSModule: React.FC = () => {
         </div>
 
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-2">
-          <div className="flex items-center space-x-2 text-[#0B1F3A] font-bold text-xs">
+          <div className="flex items-center space-x-2 text-[#02013F] font-bold text-xs">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>Golden Master Preset</span>
           </div>
           <button
             onClick={loadGoldenMasterDemo}
-            className="w-full mt-2 py-2 bg-[#F4762A] hover:bg-[#D65F14] text-white text-xs font-bold rounded-lg shadow-sm transition-all"
+            className="w-full mt-2 py-2 bg-[#81C303] hover:bg-[#72ad02] text-white text-xs font-bold rounded-lg shadow-sm transition-all"
           >
-            Load Wardha Parking Stand Benchmark
+            Load Wardha Benchmark
           </button>
         </div>
       </div>

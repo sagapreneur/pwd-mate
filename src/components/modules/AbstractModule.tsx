@@ -74,19 +74,19 @@ export const AbstractModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Bill of Quantities / Schedule 'A'
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Abstract of Cost Ledger</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Abstract of Cost Ledger</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Consolidated item quantities with floor-split unit rates and itemized financial commitments.
           </p>
         </div>
-        <div className="bg-[#071426] text-white px-5 py-2.5 rounded-lg border border-[#F4762A] text-right">
+        <div className="bg-[#02013F] text-white px-5 py-2.5 rounded-lg border border-[#81C303] text-right">
           <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
             Schedule A (Cost of Work)
           </div>
-          <div className="text-xl font-bold text-[#F4762A] tabular-nums-force">
+          <div className="text-xl font-bold text-[#81C303] tabular-nums-force">
             ₹{totalCostOfWork.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </div>
         </div>
@@ -110,14 +110,14 @@ export const AbstractModule: React.FC = () => {
             </thead>
             <tbody>
               {abstractRows.map((row) => (
-                <tr key={`${row.itemCode}-${row.floorTag}`} className="hover:bg-slate-50">
+                <tr key={`abs-${row.sr}-${row.itemCode}-${row.floorTag}`} className="hover:bg-slate-50">
                   <td className="text-center font-mono text-slate-400 text-xs">
                     {String(row.sr).padStart(2, '0')}
                   </td>
 
                   {/* Item Code Badge */}
                   <td>
-                    <span className="bg-[#0B1F3A] text-white text-[11px] font-bold px-2 py-0.5 rounded font-mono">
+                    <span className="bg-[#02013F] text-white text-[11px] font-bold px-2 py-0.5 rounded font-mono">
                       {row.itemCode}
                     </span>
                   </td>
@@ -133,7 +133,7 @@ export const AbstractModule: React.FC = () => {
                       className={`text-[10px] font-bold px-1.5 py-0.5 rounded font-mono ${
                         row.floorTag === 'GF'
                           ? 'bg-slate-100 text-slate-700'
-                          : 'bg-[#FDEBDD] text-[#D65F14]'
+                          : 'bg-[#FBFFEB] text-[#72ad02]'
                       }`}
                     >
                       {row.floorTag}
@@ -154,7 +154,7 @@ export const AbstractModule: React.FC = () => {
                   </td>
 
                   {/* Total Amount */}
-                  <td className="text-right font-mono font-bold text-xs text-[#0B1F3A] tabular-nums-force bg-slate-50/50">
+                  <td className="text-right font-mono font-bold text-xs text-[#02013F] tabular-nums-force bg-slate-50/50">
                     ₹{row.amount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </td>
                 </tr>
@@ -164,16 +164,16 @@ export const AbstractModule: React.FC = () => {
         </div>
 
         {/* Abstract Grand Total Footer */}
-        <div className="bg-[#0B1F3A] text-white p-4 flex items-center justify-between border-t border-[#14335C]">
+        <div className="bg-[#02013F] text-white p-4 flex items-center justify-between border-t border-[#14136e]">
           <div className="flex items-center space-x-2 text-xs font-semibold text-slate-300">
-            <ListOrdered className="w-4 h-4 text-[#F4762A]" />
+            <ListOrdered className="w-4 h-4 text-[#81C303]" />
             <span>Schedule 'A' Total Cost of Civil Work Items:</span>
           </div>
           <div className="text-right flex items-center space-x-4">
             <span className="text-xs text-slate-300 font-mono">
               (Rs. {(totalCostOfWork / 100000).toFixed(2)} Lakhs)
             </span>
-            <span className="text-lg font-bold text-[#F4762A] tabular-nums-force">
+            <span className="text-lg font-bold text-[#81C303] tabular-nums-force">
               ₹{totalCostOfWork.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </span>
           </div>

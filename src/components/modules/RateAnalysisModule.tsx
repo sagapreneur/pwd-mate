@@ -37,10 +37,10 @@ export const RateAnalysisModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Defensible Cost Build-Up Ledger
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Dynamic Rate Analysis Engine</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Dynamic Rate Analysis Engine</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Step-by-step Cess isolation, Area Surcharge (+{facesheet.areaSurchargePercent}%), Quarry Lead, SCADA plant credits, and Floor Elevation Escalations.
           </p>
@@ -52,7 +52,7 @@ export const RateAnalysisModule: React.FC = () => {
           <select
             value={selectedItemId || activeItem.id}
             onChange={(e) => setSelectedItemId(e.target.value)}
-            className="w-full text-xs p-2 rounded-lg border border-slate-300 bg-slate-50 font-semibold text-slate-800 focus:bg-white focus:ring-2 focus:ring-[#0B1F3A] outline-none"
+            className="w-full text-xs p-2 rounded-lg border border-slate-300 bg-slate-50 font-semibold text-slate-800 focus:bg-white focus:ring-2 focus:ring-[#02013F] outline-none"
           >
             {items.map((it) => (
               <option key={it.id} value={it.id}>
@@ -66,10 +66,10 @@ export const RateAnalysisModule: React.FC = () => {
       {/* Main Analysis Card */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
         {/* Item Header */}
-        <div className="bg-[#0B1F3A] text-white p-4 border-b border-[#14335C] flex items-center justify-between">
+        <div className="bg-[#02013F] text-white p-4 border-b border-[#14136e] flex items-center justify-between">
           <div>
             <div className="flex items-center space-x-2">
-              <span className="bg-[#F4762A] text-white text-xs font-bold px-2 py-0.5 rounded font-mono">
+              <span className="bg-[#81C303] text-white text-xs font-bold px-2 py-0.5 rounded font-mono">
                 Item {activeItem.itemCode}
               </span>
               <span className="text-xs font-semibold">{activeItem.description}</span>
@@ -80,7 +80,7 @@ export const RateAnalysisModule: React.FC = () => {
           </div>
           <div className="text-right">
             <div className="text-[10px] text-slate-400 uppercase font-semibold">Final Sanctioned Unit Rate (GF)</div>
-            <div className="text-xl font-bold text-[#F4762A] tabular-nums-force">
+            <div className="text-xl font-bold text-[#81C303] tabular-nums-force">
               ₹{rateResult.groundFloorRate.toFixed(2)} / {activeItem.unit}
             </div>
           </div>
@@ -186,8 +186,8 @@ export const RateAnalysisModule: React.FC = () => {
               )}
 
               {/* Final Net Ground Floor Rate */}
-              <tr className="bg-[#0B1F3A] text-white font-bold">
-                <td className="text-center font-mono text-xs text-[#F4762A]">NET</td>
+              <tr className="bg-[#02013F] text-white font-bold">
+                <td className="text-center font-mono text-xs text-[#81C303]">NET</td>
                 <td className="text-xs text-white uppercase tracking-wide">
                   Ground Floor Net Unit Rate (R_GF)
                 </td>
@@ -195,7 +195,7 @@ export const RateAnalysisModule: React.FC = () => {
                 <td className="text-right font-mono text-xs text-amber-300 tabular-nums-force">
                   Total Lead: +₹{rateResult.leadSurchargeTotal.toFixed(2)}
                 </td>
-                <td className="text-right font-mono text-sm text-[#F4762A] tabular-nums-force">
+                <td className="text-right font-mono text-sm text-[#81C303] tabular-nums-force">
                   ₹{rateResult.groundFloorRate.toFixed(2)}
                 </td>
               </tr>

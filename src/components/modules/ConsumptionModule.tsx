@@ -13,16 +13,16 @@ export const ConsumptionModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Bill of Materials & Consumption Factor Matrix
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Material Consumption Statement</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Material Consumption Statement</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Explodes measured item volumes across 18 construction materials with automatic zero-factor exclusion.
           </p>
         </div>
-        <div className="bg-[#0B1F3A] text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
-          <Layers className="w-4 h-4 text-[#F4762A]" />
+        <div className="bg-[#02013F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1.5">
+          <Layers className="w-4 h-4 text-[#81C303]" />
           <span>CF Explosion Matrix</span>
         </div>
       </div>
@@ -34,7 +34,7 @@ export const ConsumptionModule: React.FC = () => {
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block truncate">
               {data.materialName}
             </span>
-            <div className="text-xl font-bold text-[#0B1F3A] tabular-nums-force mt-1">
+            <div className="text-xl font-bold text-[#02013F] tabular-nums-force mt-1">
               {data.totalQty.toLocaleString('en-IN')} <span className="text-xs font-semibold text-slate-500">{data.unit}</span>
             </div>
             {matId === 'CEMENT' && (
@@ -49,7 +49,7 @@ export const ConsumptionModule: React.FC = () => {
       {/* Item-Wise Breakdown Table */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-          <h3 className="font-bold text-xs text-[#0B1F3A] uppercase tracking-wider">
+          <h3 className="font-bold text-xs text-[#02013F] uppercase tracking-wider">
             Item-by-Item Resource Explosion Table
           </h3>
           <span className="text-xs text-slate-500 font-medium">
@@ -74,7 +74,7 @@ export const ConsumptionModule: React.FC = () => {
             <tbody>
               {materialRows.map((row, idx) => (
                 <tr key={idx} className="hover:bg-slate-50">
-                  <td className="font-mono font-bold text-xs text-[#0B1F3A]">
+                  <td className="font-mono font-bold text-xs text-[#02013F]">
                     {row.itemCode}
                   </td>
                   <td className="text-xs text-slate-700 leading-snug whitespace-normal break-words py-2.5">
@@ -88,7 +88,7 @@ export const ConsumptionModule: React.FC = () => {
                   <td className="text-right font-mono text-xs text-slate-600 tabular-nums-force">
                     {row.factor.toFixed(3)}
                   </td>
-                  <td className="text-right font-mono font-bold text-xs text-[#F4762A] tabular-nums-force bg-amber-50/50">
+                  <td className="text-right font-mono font-bold text-xs text-[#81C303] tabular-nums-force bg-amber-50/50">
                     {row.derivedQty.toFixed(3)}
                   </td>
                   <td className="text-center font-mono text-xs text-slate-500">{row.materialUnit}</td>

@@ -14,19 +14,19 @@ export const TestingRegisterModule: React.FC = () => {
       {/* Header Banner */}
       <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex items-center justify-between">
         <div>
-          <span className="text-[11px] font-bold text-[#F4762A] uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-[#81C303] uppercase tracking-wider">
             Quality Control & Laboratory Testing Compliance / Schedule 'C'
           </span>
-          <h2 className="text-xl font-bold text-[#0B1F3A]">Material Testing Frequency (MTF) Register</h2>
+          <h2 className="text-xl font-bold text-[#02013F]">Material Testing Frequency (MTF) Register</h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Mandatory test series derived under Maharashtra PWD Handbook (Ch. 33), MORTH (Section 1700) and IS Standards.
           </p>
         </div>
-        <div className="bg-[#071426] text-white px-5 py-2.5 rounded-lg border border-[#F4762A] text-right">
+        <div className="bg-[#02013F] text-white px-5 py-2.5 rounded-lg border border-[#81C303] text-right">
           <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
             Schedule C (Testing Fees)
           </div>
-          <div className="text-xl font-bold text-[#F4762A] tabular-nums-force">
+          <div className="text-xl font-bold text-[#81C303] tabular-nums-force">
             ₹{totalTestingCost.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </div>
         </div>
@@ -63,7 +63,7 @@ export const TestingRegisterModule: React.FC = () => {
                     </td>
                     <td className="font-semibold text-slate-800 text-xs">{row.materialName}</td>
                     <td className="text-xs text-slate-700 leading-tight">
-                      <div className="font-medium text-[#0B1F3A]">{row.testSeriesName}</div>
+                      <div className="font-medium text-[#02013F]">{row.testSeriesName}</div>
                       <div className="text-[10px] text-slate-400 font-mono mt-0.5">
                         Threshold: 1 test per {row.threshold} units & part thereof
                       </div>
@@ -73,14 +73,14 @@ export const TestingRegisterModule: React.FC = () => {
                       {row.totalVolume.toFixed(2)}
                     </td>
                     <td className="text-center">
-                      <span className="bg-[#0B1F3A] text-white font-mono font-bold text-xs px-2 py-0.5 rounded">
+                      <span className="bg-[#02013F] text-white font-mono font-bold text-xs px-2 py-0.5 rounded">
                         {row.batchesCount} {row.batchesCount === 1 ? 'Test' : 'Tests'}
                       </span>
                     </td>
                     <td className="text-right font-mono text-xs text-slate-600 tabular-nums-force">
                       ₹{row.feePerBatch.toLocaleString('en-IN')}
                     </td>
-                    <td className="text-right font-mono font-bold text-xs text-[#0B1F3A] tabular-nums-force bg-slate-50/50">
+                    <td className="text-right font-mono font-bold text-xs text-[#02013F] tabular-nums-force bg-slate-50/50">
                       ₹{row.totalCost.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </td>
                   </tr>
@@ -91,12 +91,12 @@ export const TestingRegisterModule: React.FC = () => {
         </div>
 
         {/* Schedule C Footer */}
-        <div className="bg-[#0B1F3A] text-white p-4 flex items-center justify-between border-t border-[#14335C]">
+        <div className="bg-[#02013F] text-white p-4 flex items-center justify-between border-t border-[#14136e]">
           <div className="flex items-center space-x-2 text-xs font-semibold text-slate-300">
-            <FlaskConical className="w-4 h-4 text-[#F4762A]" />
+            <FlaskConical className="w-4 h-4 text-[#81C303]" />
             <span>Schedule 'C' Total Quality Control Testing Fees:</span>
           </div>
-          <div className="text-lg font-bold text-[#F4762A] tabular-nums-force">
+          <div className="text-lg font-bold text-[#81C303] tabular-nums-force">
             ₹{totalTestingCost.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </div>
         </div>

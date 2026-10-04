@@ -242,7 +242,7 @@ export const PrintableDossierModule: React.FC = () => {
               </span>
               <span className="text-xs text-slate-500">18-Part Technical Sanction Format (S.P. OFF.WALL Reference)</span>
             </div>
-            <h2 className="text-xl font-bold text-[#0B1F3A] mt-1">
+            <h2 className="text-xl font-bold text-[#02013F] mt-1">
               Printable Technical Sanction Dossier (PDF & Excel)
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -261,7 +261,7 @@ export const PrintableDossierModule: React.FC = () => {
 
             <button
               onClick={handleExportExcel}
-              className="flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-[#14335C] hover:bg-[#1D4B85] text-white text-xs font-semibold border border-slate-700 transition-colors shadow-sm"
+              className="flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-[#14136e] hover:bg-[#16147D] text-white text-xs font-semibold border border-slate-700 transition-colors shadow-sm"
               title="Download authentic multi-sheet Maharashtra PWD Excel estimate matching official spreadsheets"
             >
               <Download className="w-3.5 h-3.5 text-emerald-400" />
@@ -272,7 +272,7 @@ export const PrintableDossierModule: React.FC = () => {
               onClick={handlePrint}
               className="flex items-center space-x-2 px-5 py-2 rounded-lg bg-black hover:bg-neutral-800 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all active:scale-95"
             >
-              <Printer className="w-4 h-4 text-[#F4762A]" />
+              <Printer className="w-4 h-4 text-[#81C303]" />
               <span>Print / Save as PDF (Ctrl + P)</span>
             </button>
           </div>
@@ -281,8 +281,8 @@ export const PrintableDossierModule: React.FC = () => {
         {/* Section Checklist with Quick Select All */}
         <div className="border-t border-slate-100 pt-3 space-y-2">
           <div className="flex items-center justify-between">
-            <div className="font-semibold text-xs text-[#0B1F3A] flex items-center space-x-1.5">
-              <Layers className="w-3.5 h-3.5 text-[#F4762A]" />
+            <div className="font-semibold text-xs text-[#02013F] flex items-center space-x-1.5">
+              <Layers className="w-3.5 h-3.5 text-[#81C303]" />
               <span>Select Sheets to Include in Printable Dossier:</span>
             </div>
             <div className="flex items-center space-x-2">
